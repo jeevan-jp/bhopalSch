@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule, MatButtonModule } from '@angular/material';
+import { AppRoutingModule } from '../app/app-routing/app-routing.module';
 
 import 'hammerjs';
 
@@ -13,6 +16,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
 
 
 @NgModule({
@@ -21,7 +27,10 @@ import { HeaderComponent } from './header/header.component';
     NavbarComponent,
     ComplaintsComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,10 @@ import { HeaderComponent } from './header/header.component';
     FlexLayoutModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
