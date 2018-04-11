@@ -1,8 +1,8 @@
-.active  {
-    background: #37479F;
-}
+.active { background: #37479F; }
 
 a:hover {
     text-decoration: none;
     color: #fff;
 }
+
+button:focus { outline: none; }
