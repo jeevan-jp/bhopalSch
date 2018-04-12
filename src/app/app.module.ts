@@ -19,6 +19,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { CompformComponent } from './components/compform/compform.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ContactusComponent } from './components/contactus/contactus.component';
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    ContactusComponent
+    ContactusComponent,
+    CompformComponent
   ],
   imports: [
     BrowserModule,
