@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule, MatButtonModule } from '@angular/material';
 import { AppRoutingModule } from '../app/app-routing/app-routing.module';
+import { MaterialModule } from './material.module';
+// import { MaterialModule } from './material/material.module';
 
 import 'hammerjs';
 
@@ -40,11 +39,8 @@ import { CompformComponent } from './components/compform/compform.component';
     ReactiveFormsModule,
     FlexLayoutModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
     AppRoutingModule,
-    MatMenuModule,
-    MatIconModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

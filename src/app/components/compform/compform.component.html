@@ -1,15 +1,26 @@
-<!--
-<div fxFlex fxLayout="column" fx>
-  <form novalidate [FormGroup]="complaintForm" (ngSubmit)="onSubmit()">
-    <md-input-container class="half-width">
-      <input mdInput formControlName="firstname" placeholder="First Name" type="text" required>
-      <md-hint>
-        <span [hidden]="!(formErrors.firstname)">
-          {{formErrors.firstname}}
-        </span>
-      </md-hint>
-    </md-input-container>
-  </form>
+<div class="container" fxLayoutGap="10px" fxLayout="column">
+  <div fxFlex class="compForm">
+    <form novalidate (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="title" placeholder="Complaint title" type="text" required>
+      </mat-form-field>
+      <p>
+        <mat-form-field class="full-width">
+          <input type="text" placeholder="Department" formControlName="dept"
+            aria-label="Number" matInput [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let dept of deptList" [value]="dept">
+              {{ dept }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Describe You Problem (max 350 chars.)" required></textarea>
+        </mat-form-field>
+      </p>
+      <button mat-raised-button class="btn-s">Submit</button>
+    </form>
+  </div>
 </div>
--->
-<h1>This is compaint form component.</h1>
