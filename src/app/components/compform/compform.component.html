@@ -4,6 +4,11 @@
       <mat-form-field class="full-width">
         <input matInput [(ngModel)]="compForm.title" formControlName="title" 
           placeholder="Complaint title" type="text" required>
+        <mat-hint>
+          <span [hidden]="!(formErrors.title)">
+            {{ formErrors.title }}
+          </span>
+        </mat-hint>
       </mat-form-field>
       <p>
         <mat-form-field class="full-width">
@@ -14,12 +19,22 @@
               {{ dept }}
             </mat-option>
           </mat-autocomplete>
+          <mat-hint>
+              <span [hidden]="!(formErrors.dept)">
+                {{ formErrors.dept }}
+              </span>
+          </mat-hint>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field class="full-width">
           <textarea matInput [(ngModel)]="compForm.description" formControlName="description"
             placeholder="Describe You Problem (max 350 chars.)" required></textarea>
+          <mat-hint>
+              <span [hidden]="!(formErrors.description)">
+                {{ formErrors.description }}
+              </span>
+            </mat-hint>
         </mat-form-field>
       </p>
       <button mat-raised-button [disabled]="compForm.invalid" class="btn-s">Submit</button>
