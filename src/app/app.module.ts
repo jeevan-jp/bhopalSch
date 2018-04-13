@@ -6,7 +6,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app/app-routing/app-routing.module';
 import { MaterialModule } from './material.module';
-// import { MaterialModule } from './material/material.module';
 
 import 'hammerjs';
 

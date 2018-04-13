@@ -1,13 +1,14 @@
 <div class="container" fxLayoutGap="10px" fxLayout="column">
-  <div fxFlex class="compForm">
-    <form novalidate (ngSubmit)="onSubmit()">
+  <div fxFlex class="complaintForm">
+    <form novalidate [formGroup]="compForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="full-width">
-        <input matInput formControlName="title" placeholder="Complaint title" type="text" required>
+        <input matInput [(ngModel)]="compForm.title" formControlName="title" 
+          placeholder="Complaint title" type="text" required>
       </mat-form-field>
       <p>
         <mat-form-field class="full-width">
-          <input type="text" placeholder="Department" formControlName="dept"
-            aria-label="Number" matInput [matAutocomplete]="auto">
+          <input type="text" [(ngModel)]="compForm.dept" placeholder="Department" 
+            formControlName="dept" aria-label="Number" matInput [matAutocomplete]="auto" required>
           <mat-autocomplete #auto="matAutocomplete">
             <mat-option *ngFor="let dept of deptList" [value]="dept">
               {{ dept }}
@@ -17,10 +18,14 @@
       </p>
       <p>
         <mat-form-field class="full-width">
-          <textarea matInput placeholder="Describe You Problem (max 350 chars.)" required></textarea>
+          <textarea matInput [(ngModel)]="compForm.description" formControlName="description"
+            placeholder="Describe You Problem (max 350 chars.)" required></textarea>
         </mat-form-field>
       </p>
-      <button mat-raised-button class="btn-s">Submit</button>
+      <button mat-raised-button [disabled]="compForm.invalid" class="btn-s">Submit</button>
     </form>
+    <p>
+      FORM: {{ compForm.value | json }}
+    </p>
   </div>
 </div>

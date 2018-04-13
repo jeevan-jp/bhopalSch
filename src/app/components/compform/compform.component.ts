@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-compform',
@@ -8,7 +8,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class CompformComponent implements OnInit {
 
-  complaintForm: FormGroup;
+  compForm: FormGroup;
   deptList: any = [
     'electricity',
     'water',
@@ -19,7 +19,17 @@ export class CompformComponent implements OnInit {
     'Health'
   ];
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {
+    this.createForm();
+  }
+
+  createForm() {
+    this.compForm = this.fb.group({
+      title: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      dept: ['', Validators.required],
+      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(350)]]
+    });
+  }
 
   ngOnInit() {
   }
