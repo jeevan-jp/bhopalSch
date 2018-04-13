@@ -1,8 +1,8 @@
 <div class="container" fxLayoutGap="10px" fxLayout="column">
   <div fxFlex class="complaintForm">
     <form novalidate [formGroup]="compForm" (ngSubmit)="onSubmit()">
-      <mat-form-field class="full-width">
-        <input matInput [(ngModel)]="compForm.title" formControlName="title" 
+      <mat-form-field class="full-width" dividerColor="{{formErrors.title?'warn':'primary'}}">
+        <input matInput [(ngModel)]="compForm.title" formControlName="title"
           placeholder="Complaint title" type="text" required>
         <mat-hint>
           <span [hidden]="!(formErrors.title)">
@@ -11,7 +11,7 @@
         </mat-hint>
       </mat-form-field>
       <p>
-        <mat-form-field class="full-width">
+        <mat-form-field class="full-width" dividerColor="{{formErrors.dept?'warn':'primary'}}">
           <input type="text" [(ngModel)]="compForm.dept" placeholder="Department" 
             formControlName="dept" aria-label="Number" matInput [matAutocomplete]="auto" required>
           <mat-autocomplete #auto="matAutocomplete">
@@ -27,9 +27,9 @@
         </mat-form-field>
       </p>
       <p>
-        <mat-form-field class="full-width">
+        <mat-form-field class="full-width" dividerColor="{{formErrors.description?'warn':'primary'}}">
           <textarea matInput [(ngModel)]="compForm.description" formControlName="description"
-            placeholder="Describe You Problem (max 350 chars.)" required></textarea>
+            placeholder="Describe your problem (max 350 chars.)" required></textarea>
           <mat-hint>
               <span [hidden]="!(formErrors.description)">
                 {{ formErrors.description }}

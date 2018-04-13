@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
+declare const $;
 
 @Component({
   selector: 'app-compform',
@@ -40,8 +41,8 @@ export class CompformComponent implements OnInit {
     },
     'description': {
       'required': 'Description title is required.',
-      'minlength': 'Description must be at least 4 characters long.',
-      'maxlength': 'Description cannot be more than 50 characters long.'
+      'minlength': 'Description must be at least 10 characters long.',
+      'maxlength': 'Description cannot be more than 500 characters long.'
     }
   };
 
@@ -79,7 +80,10 @@ export class CompformComponent implements OnInit {
   }
 
   onSubmit() {
+    $('button.btn-s')[0].disabled = true;
     console.log(JSON.stringify(this.compForm.value));
+    this.compForm.reset();
+    // The submission to server code goes here.
   }
 
   ngOnInit() {

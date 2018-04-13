@@ -20,3 +20,7 @@
     max-width: 500px;
     width: 100%;
 }
+
+mat-hint > span {
+    color: #f66257;
+}
