@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 declare const $;
 

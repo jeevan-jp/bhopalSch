@@ -1,0 +1,71 @@
+<div class="container" fxLayoutGap="10px" fxLayout="column">
+  <div style="text-align: center;">
+    <h1>Department Signup</h1>
+  </div>
+  <div class="spacer">
+    <div fxFlex class="FormClass">
+      <form novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        <p>
+          Select Role:&nbsp;&nbsp;&nbsp;&nbsp;
+          <mat-radio-group [(ngModel)]="signupForm.role" formControlName="role">
+            <mat-radio-button value="admin" name="role">Admin</mat-radio-button> &nbsp;
+            <mat-radio-button value="emp" name="role">Employee</mat-radio-button>
+          </mat-radio-group>
+        </p>
+        <p>
+          <mat-form-field class="full-width" dividerColor="{{ formErrors.firstname?'warn':'primary' }}">
+            <input matInput [(ngModel)]="signupForm.firstname" formControlName="firstname"
+              placeholder="First name" type="text" required>
+            <mat-hint>
+              <span [hidden]="!(formErrors.firstname)">
+                {{ formErrors.firstname }}
+              </span>
+            </mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="full-width" dividerColor="{{ formErrors.lastname?'warn':'primary' }}">
+            <input matInput [(ngModel)]="signupForm.lastname" formControlName="lastname"
+              placeholder="Last name" type="text" required>
+            <mat-hint>
+              <span [hidden]="!(formErrors.lastname)">
+                {{ formErrors.lastname }}
+              </span>
+            </mat-hint>
+          </mat-form-field>
+          </p>
+        <p>
+          <mat-form-field class="full-width" dividerColor="{{formErrors.dept?'warn':'primary'}}">
+            <input type="text" [(ngModel)]="signupForm.dept" placeholder="Department" 
+              formControlName="dept" aria-label="Number" matInput [matAutocomplete]="auto" required>
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let dept of deptList" [value]="dept">
+                {{ dept }}
+              </mat-option>
+            </mat-autocomplete>
+            <mat-hint>
+              <span [hidden]="!(formErrors.dept)">
+                {{ formErrors.dept }}
+              </span>
+            </mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="full-width" dividerColor="{{formErrors.email?'warn':'primary'}}">
+            <input matInput [(ngModel)]="signupForm.email" formControlName="email"
+              placeholder="Email of person" type="text" required>
+            <mat-hint>
+              <span [hidden]="!(formErrors.email)">
+                {{ formErrors.email }}
+              </span>
+            </mat-hint>
+          </mat-form-field>
+        </p>
+        <button mat-raised-button [disabled]="signupForm.invalid" class="btn-s">Submit</button>
+      </form>
+      <p>
+        FORM: {{ signupForm.value | json }}
+      </p>
+    </div>
+  </div>
+</div>
