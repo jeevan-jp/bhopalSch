@@ -5,6 +5,7 @@ import { AboutComponent } from '../components/about/about.component';
 import { ContactusComponent } from '../components/contactus/contactus.component';
 import { ComplaintsComponent } from '../complaints/complaints.component';
 import { CompformComponent } from '../components/compform/compform.component';
+import { NotfoundComponent } from '../components/notfound/notfound.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -12,5 +13,7 @@ export const routes: Routes = [
     { path: 'complaint', component: ComplaintsComponent },
     { path: 'cform' , component: CompformComponent },
     { path: 'contactus', component: ContactusComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' }
+    { path: 'pageNotFound', component: NotfoundComponent },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '**', redirectTo: 'pageNotFound', pathMatch: 'full' }
 ];
