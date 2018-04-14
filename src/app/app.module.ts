@@ -1,3 +1,4 @@
+import { WebService } from './web.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -18,6 +19,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { CompformComponent } from './components/compform/compform.component';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -39,9 +41,10 @@ import { CompformComponent } from './components/compform/compform.component';
     FlexLayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [WebService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
