@@ -1,3 +1,4 @@
+import { WebService } from './web.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +21,7 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { CompformComponent } from './components/compform/compform.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { SignupComponent } from './components/signup/signup.component';
-
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -43,9 +44,10 @@ import { SignupComponent } from './components/signup/signup.component';
     FlexLayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [WebService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
