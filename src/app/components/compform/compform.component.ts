@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
+import {Router} from '@angular/router';
+import { Location } from '@angular/common';
 declare const $;
 
 @Component({
@@ -20,7 +22,7 @@ export class CompformComponent implements OnInit {
     'Health'
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private location: Location) {
     this.createForm();
   }
 
@@ -83,6 +85,7 @@ export class CompformComponent implements OnInit {
     $('button.btn-s')[0].disabled = true;
     console.log(JSON.stringify(this.compForm.value));
     this.compForm.reset();
+    document.location.reload();
     // The submission to server code goes here.
   }
 
