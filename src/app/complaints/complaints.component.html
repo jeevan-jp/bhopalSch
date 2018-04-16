@@ -1,8 +1,10 @@
 <h1>LATEST COMPLAINTS</h1>
 <!-- <div class="container">
   <div class=row>
+
   <div class="comp" *ngFor = "let com of reverse">
-      <div class="col-sm-12 col-md-6 col-lg-4" *ngIf="com.id>=reverse.length-4">
+    <div class="clearfix" *ngIf="com.id>=reverse.length-4"></div>
+      <div class="col-sm-12 col-md-6 col-lg-4" >
         <div class="title">
           <p>{{com.title}}</p>
         </div>
@@ -10,27 +12,18 @@
           <b>{{com.body}}</b>
         </div>
       </div>
+      <p>{{ com.title }}<br>{{ com.body }}</p>
     </div>
   </div>
+</div>
 </div> -->
 <div class="container">
-    <div class="row">
-      
-      
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-
-
-      
-    </div>
-  </div>
+<div class="row">
+<div class="col-sm-12 col-md-6 col-lg-4">
+<p>Test</p>
+</div>
+</div>
+</div>
 
 
 

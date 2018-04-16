@@ -7,7 +7,6 @@ import {Complaint} from '../models/complaints';
   templateUrl: './complaints.component.html',
   styleUrls: ['./complaints.component.css']
 })
-export class ComplaintsComponent implements OnInit {
 
   constructor( private webService : WebService ) {}
   
