@@ -8,6 +8,8 @@ import {Complaint} from '../models/complaints';
   styleUrls: ['./complaints.component.css']
 })
 
+export class ComplaintsComponent implements OnInit {
+
   constructor( private webService: WebService ) {}
 
   complaints: Complaint[];
