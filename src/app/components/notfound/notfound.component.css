@@ -1,7 +1,14 @@
-.notFound {
-    width: 100%;
+.notFound{
     height: 70vh;
-    text-align: center;
-    background: #9898fc;
-    padding-top: 20vh;
+    width: 100%;
+    background-color: #EEEEEE;
+    padding-top:175px;
+}
+
+
+.elegantshd {
+    text-shadow: black 0.1em 0.1em 0.2em;
+    letter-spacing: 5px;
+    font-size: 50px;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
