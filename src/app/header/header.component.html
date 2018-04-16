@@ -8,13 +8,13 @@
 </mat-toolbar>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>
-    <span routerLink="/complaint">Add Complaint</span>
+  <button mat-menu-item routerLink="/cform">
+    <span>Add Complaint</span>
   </button>
-  <button mat-menu-item>
-    <span routerLink="/complaint" MatTooltip="Login or signup!">Active Complaints</span>
+  <button mat-menu-item routerLink="/complaint">
+    <span MatTooltip="Login or signup!">Active Complaints</span>
   </button>
-  <button mat-menu-item>
-    <span routerLink="/complaint">All complaints</span>
+  <button mat-menu-item routerLink="/complaint">
+    <span>All complaints</span>
   </button>
 </mat-menu>

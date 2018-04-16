@@ -5,8 +5,33 @@
 body {
   margin: 0px;
   padding: 0px;
+  font-family: Roboto, Helvetica Neue Light, Helvetica Neue,
+    Helvetica, Arial, Lucida Grande,sans-serif;
 }
 
 .flex-spacer {
   flex: 1 1 auto;
+}
+
+.container {
+	margin: 20px;
+	display: flex;
+}
+
+.FormClass {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 95%;
+}
+
+.half-width {
+  width: 45%;
+}
+
+mat-hint > span {
+  color: #f66257;
 }
