@@ -7,6 +7,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatRadioModule
   ],
   exports: [
     MatButtonModule,
@@ -26,9 +30,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatRadioModule
   ],
   declarations: []
 })
 export class MaterialModule { }
-

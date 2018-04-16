@@ -1,26 +1,53 @@
 <div class="container" fxLayoutGap="10px" fxLayout="column">
-  <div fxFlex class="compForm">
-    <form novalidate (ngSubmit)="onSubmit()">
-      <mat-form-field class="full-width">
-        <input matInput formControlName="title" placeholder="Complaint title" type="text" required>
-      </mat-form-field>
-      <p>
-        <mat-form-field class="full-width">
-          <input type="text" placeholder="Department" formControlName="dept"
-            aria-label="Number" matInput [matAutocomplete]="auto">
-          <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let dept of deptList" [value]="dept">
-              {{ dept }}
-            </mat-option>
-          </mat-autocomplete>
+  <div style="text-align: center;">
+    <h1>Complaint Form</h1>
+  </div>
+  <div class="spacer">
+    <div fxFlex class="FormClass">
+      <form novalidate [formGroup]="compForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width" dividerColor="{{formErrors.title?'warn':'primary'}}">
+          <input matInput [(ngModel)]="compForm.title" formControlName="title"
+            placeholder="Complaint title" type="text" required>
+          <mat-hint>
+            <span [hidden]="!(formErrors.title)">
+              {{ formErrors.title }}
+            </span>
+          </mat-hint>
         </mat-form-field>
-      </p>
+        <p>
+          <mat-form-field class="full-width" dividerColor="{{formErrors.dept?'warn':'primary'}}">
+            <input type="text" [(ngModel)]="compForm.dept" placeholder="Department" 
+              formControlName="dept" aria-label="Number" matInput [matAutocomplete]="auto" required>
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let dept of deptList" [value]="dept">
+                {{ dept }}
+              </mat-option>
+            </mat-autocomplete>
+            <mat-hint>
+                <span [hidden]="!(formErrors.dept)">
+                  {{ formErrors.dept }}
+                </span>
+            </mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+        <h5><i>Description:</i></h5>
+        <p>
+          <mat-form-field class="full-width" dividerColor="{{formErrors.description?'warn':'primary'}}">
+            <textarea matInput [(ngModel)]="compForm.description" formControlName="description"
+              placeholder="The description must contain all relevant details" required></textarea>
+            <mat-hint>
+                <span [hidden]="!(formErrors.description)">
+                  {{ formErrors.description }}
+                </span>
+            </mat-hint>
+          </mat-form-field>
+        </p>
+        <button mat-raised-button [disabled]="compForm.invalid" class="btn-s">Submit</button>
+      </form>
       <p>
-        <mat-form-field class="full-width">
-          <textarea matInput placeholder="Describe You Problem (max 350 chars.)" required></textarea>
-        </mat-form-field>
+        FORM: {{ compForm.value | json }}
       </p>
-      <button mat-raised-button class="btn-s">Submit</button>
-    </form>
+    </div>
   </div>
 </div>

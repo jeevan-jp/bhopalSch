@@ -1,3 +1,4 @@
+import { WebService } from './web.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -5,8 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app/app-routing/app-routing.module';
-import { MaterialModule } from './material.module';
-// import { MaterialModule } from './material/material.module';
+import { MaterialModule } from './material/material.module';
 
 import 'hammerjs';
 
@@ -19,7 +19,9 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { CompformComponent } from './components/compform/compform.component';
-
+import { NotfoundComponent } from './components/notfound/notfound.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { CompformComponent } from './components/compform/compform.component';
     HomeComponent,
     AboutComponent,
     ContactusComponent,
-    CompformComponent
+    CompformComponent,
+    NotfoundComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +44,10 @@ import { CompformComponent } from './components/compform/compform.component';
     FlexLayoutModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [WebService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
