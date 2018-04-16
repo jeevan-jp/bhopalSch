@@ -1,7 +1,7 @@
 
 import { WebService } from './../web.service';
 import { Component, OnInit } from '@angular/core';
-import {Complaint} from '../models/complaints';
+import { Complaint } from '../models/complaints';
 @Component({
   selector: 'app-complaints',
   templateUrl: './complaints.component.html',
@@ -14,12 +14,12 @@ export class ComplaintsComponent implements OnInit {
 
   complaints: Complaint[];
   async ngOnInit() {
-        const response = await this.webService.getMessages();
-        console.log(response.json());
-        this.complaints = response.json();
+    const response = await this.webService.getMessages();
+    console.log(response.json());
+    this.complaints = response.json();
   }
   // reverse: Complaint[] = this.complaints.sort((a
   //   : Complaint, b: Complaint) => {
-  //   return -(a.id - b.id);
+  //   return -(a.id - b.id);b
   // });
 }
