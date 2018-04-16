@@ -8,8 +8,8 @@ import {Complaint} from '../models/complaints';
   styleUrls: ['./complaints.component.css']
 })
 
-  constructor( private webService : WebService ) {}
-  
+  constructor( private webService: WebService ) {}
+
   complaints: Complaint[];
   async ngOnInit() {
         const response = await this.webService.getMessages();
@@ -17,7 +17,7 @@ import {Complaint} from '../models/complaints';
         this.complaints = response.json();
   }
   // reverse: Complaint[] = this.complaints.sort((a
-    //: Complaint, b: Complaint) => {
-    //return -(a.id - b.id);
-  //});
+  //   : Complaint, b: Complaint) => {
+  //   return -(a.id - b.id);
+  // });
 }
