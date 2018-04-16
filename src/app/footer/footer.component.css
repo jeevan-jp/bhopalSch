@@ -1,0 +1,15 @@
+.footer{
+  background-color:#E8EAF6;
+}
+
+
+.list-inline-item{
+  border:1px solid blue;
+  border-radius:50%;
+  padding:5px;
+}
+.address{
+  margin-bottom:0;
+}
+
+
