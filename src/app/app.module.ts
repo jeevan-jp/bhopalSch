@@ -20,6 +20,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { CompformComponent } from './components/compform/compform.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { HttpModule } from '@angular/http';
 
 @NgModule({
@@ -33,7 +34,8 @@ import { HttpModule } from '@angular/http';
     AboutComponent,
     ContactusComponent,
     CompformComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
