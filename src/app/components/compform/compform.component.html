@@ -27,14 +27,16 @@
         </mat-form-field>
       </p>
       <p>
+      <h5><i>Description:</i></h5>
+      <p>
         <mat-form-field class="full-width" dividerColor="{{formErrors.description?'warn':'primary'}}">
           <textarea matInput [(ngModel)]="compForm.description" formControlName="description"
-            placeholder="Describe your problem (max 350 chars.)" required></textarea>
+            placeholder="The description must contain all relevant details" required></textarea>
           <mat-hint>
               <span [hidden]="!(formErrors.description)">
                 {{ formErrors.description }}
               </span>
-            </mat-hint>
+          </mat-hint>
         </mat-form-field>
       </p>
       <button mat-raised-button [disabled]="compForm.invalid" class="btn-s" >Submit</button>

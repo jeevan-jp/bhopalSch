@@ -15,6 +15,10 @@
     color: #fff;
 }
 
+h5 {
+    font-size: 14px;
+}
+
 .complaintForm {
     min-width: 150px;
     max-width: 500px;

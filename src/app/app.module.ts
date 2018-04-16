@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app/app-routing/app-routing.module';
-import { MaterialModule } from './material.module';
+import { MaterialModule } from './material/material.module';
 
 import 'hammerjs';
 
@@ -19,8 +19,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import { CompformComponent } from './components/compform/compform.component';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HttpModule } from '@angular/http';
-
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import { HttpModule } from '@angular/http';
     HomeComponent,
     AboutComponent,
     ContactusComponent,
-    CompformComponent
+    CompformComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
