@@ -1,6 +1,7 @@
 import { AuthService } from './../../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
+import { MatDialog, MatDialogRef } from '@angular/material/';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, public dialogRef: MatDialogRef<LoginComponent>) { }
   loginData = {
     email: '',
     password: ''

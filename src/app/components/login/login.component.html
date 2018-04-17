@@ -1,10 +1,17 @@
 <form>
-  <mat-form-field class="example-full-width">
-    <input  matInput [(ngModel)] = "loginData.email" [ngModelOptions]="{standalone: true}" placeholder="Email-id"  >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input  matInput  [(ngModel)] = "loginData.password" [ngModelOptions]="{standalone: true}"placeholder="Password"  >
-  </mat-form-field>
-  <br>
-  <button md-raised-button color="primary"(click)="login()">Login</button>
+  <mat-dialog-content>
+    <mat-form-field class="full-width">
+      <input  matInput [(ngModel)] = "loginData.email" [ngModelOptions]="{standalone: true}" placeholder="Email-id"  >
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input  matInput  [(ngModel)] = "loginData.password" [ngModelOptions]="{standalone: true}" placeholder="Password"  >
+    </mat-form-field>
+    <br>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <span class="flex-spacer"></span>
+    <button mat-raised-button mat-dialog-close>Close</button>
+    <button mat-raised-button class="btn-s" disabled="form.invalid"
+      [mat-dialog-close]="true">Login</button>
+  </mat-dialog-actions>
 </form>
