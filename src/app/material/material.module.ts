@@ -10,6 +10,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   imports: [
@@ -22,7 +23,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSelectModule,
     MatAutocompleteModule,
     MatFormFieldModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule,
+    MatSnackBarModule
   ],
   exports: [
     MatButtonModule,
@@ -34,7 +37,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatAutocompleteModule,
     MatFormFieldModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   declarations: []
 })

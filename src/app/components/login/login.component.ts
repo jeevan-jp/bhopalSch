@@ -1,7 +1,8 @@
 import { AuthService } from './../../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatDialogRef } from '@angular/material/';
+import { Observable } from 'rxjs/Observable';
+import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material/';
 declare const $;
 
 
@@ -13,7 +14,7 @@ declare const $;
 export class LoginComponent implements OnInit {
 
   constructor(private auth: AuthService, private fb: FormBuilder,
-    public dialogRef: MatDialogRef<LoginComponent>) {
+    public dialogRef: MatDialogRef<LoginComponent>, public snack: MatSnackBar) {
       this.createForm();
      }
 
@@ -71,10 +72,20 @@ export class LoginComponent implements OnInit {
   login() {
 
     $('button.btn-s')[0].disabled = true;
-     console.log(this.loginForm);
-     this.loginForm.reset();
+    this.openSnackBar(this.loginForm.value['email']);
+    console.log(this.loginForm.value);
+    this.loginForm.reset();
     // this.auth.login(loginForm);
 
+    this.dialogRef.close();
+  }
+
+  openSnackBar(email): Observable<any> {
+    console.log('done');
+    this.snack.open('Logged in as!', email, {
+      duration: 4000,
+    });
+    return;
   }
 
   ngOnInit() {
