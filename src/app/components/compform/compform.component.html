@@ -7,7 +7,7 @@
       <form novalidate [formGroup]="compForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="full-width" dividerColor="{{formErrors.title?'warn':'primary'}}">
           <input matInput [(ngModel)]="compForm.title" formControlName="title"
-            placeholder="Give title of your Complaint" type="text" required>
+            placeholder="Give your complaint a title" type="text" required>
           <mat-hint>
             <span [hidden]="!(formErrors.title)">
               {{ formErrors.title }}

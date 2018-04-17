@@ -15,7 +15,6 @@ import {  MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatFormFieldM
   MatCardModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,7 +32,6 @@ import { AuthService } from './auth.service';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     ComplaintsComponent,
     FooterComponent,
     HeaderComponent,

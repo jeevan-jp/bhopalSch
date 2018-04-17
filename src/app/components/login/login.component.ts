@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     public dialogRef: MatDialogRef<LoginComponent>,
     private route: Router, public snack: MatSnackBar) {
       this.createForm();
-     }
+    }
 
   loginForm: FormGroup;
 
@@ -97,6 +97,15 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    $('.dep').hide();
+    $('#showHidden').on('click', () => {
+      $('.dep').toggle();
+    })
+  }
+
+  depSignUp() {
+    this.route.navigateByUrl('/signupDep');
+    this.dialogRef.close();
   }
 
 }
