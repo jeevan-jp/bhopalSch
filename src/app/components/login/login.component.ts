@@ -92,7 +92,7 @@ export class LoginComponent implements OnInit {
 
   closeDialog() {
     console.log('closing');
-    this.route.navigateByUrl('/signup');
+    this.route.navigateByUrl('/register');
     this.dialogRef.close();
   }
 

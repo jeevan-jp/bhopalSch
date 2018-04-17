@@ -17,7 +17,7 @@ export const routes: Routes = [
     { path: 'contactus', component: ContactusComponent },
     { path: 'pageNotFound', component: NotfoundComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'signup', component: RegisterComponent },
+    { path: 'register', component: RegisterComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', redirectTo: 'pageNotFound', pathMatch: 'full' }
 ];
