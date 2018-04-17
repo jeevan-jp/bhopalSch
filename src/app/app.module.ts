@@ -21,6 +21,9 @@ import { ContactusComponent } from './components/contactus/contactus.component';
 import { CompformComponent } from './components/compform/compform.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HttpModule } from '@angular/http';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,9 @@ import { HttpModule } from '@angular/http';
     AboutComponent,
     ContactusComponent,
     CompformComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,7 @@ import { HttpModule } from '@angular/http';
     MaterialModule,
     HttpModule
   ],
-  providers: [WebService ],
+  providers: [WebService, AuthService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

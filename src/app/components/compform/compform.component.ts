@@ -23,11 +23,7 @@ export class CompformComponent implements OnInit {
     'Health'
   ];
 
-<<<<<<< HEAD
-  constructor(private fb: FormBuilder, private webService: WebService ) {
-=======
-  constructor(private fb: FormBuilder, private location: Location) {
->>>>>>> ddfbf2b85372760077294ced6c163dd8adf31ea2
+  constructor(private fb: FormBuilder, private webService: WebService, private location: Location) {
     this.createForm();
   }
 
@@ -90,12 +86,7 @@ export class CompformComponent implements OnInit {
     $('button.btn-s')[0].disabled = true;
     this.webService.postMessages(this.compForm.value);
     console.log(JSON.stringify(this.compForm.value));
-<<<<<<< HEAD
         this.compForm.reset();
-=======
-    this.compForm.reset();
-    document.location.reload();
->>>>>>> ddfbf2b85372760077294ced6c163dd8adf31ea2
     // The submission to server code goes here.
   }
 
