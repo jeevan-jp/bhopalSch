@@ -2,6 +2,7 @@ import { AuthService } from './../../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material/';
 declare const $;
 
@@ -14,7 +15,8 @@ declare const $;
 export class LoginComponent implements OnInit {
 
   constructor(private auth: AuthService, private fb: FormBuilder,
-    public dialogRef: MatDialogRef<LoginComponent>, public snack: MatSnackBar) {
+    public dialogRef: MatDialogRef<LoginComponent>,
+    private route: Router, public snack: MatSnackBar) {
       this.createForm();
      }
 
@@ -86,6 +88,12 @@ export class LoginComponent implements OnInit {
       duration: 4000,
     });
     return;
+  }
+
+  closeDialog() {
+    console.log('closing');
+    this.route.navigateByUrl('/signup');
+    this.dialogRef.close();
   }
 
   ngOnInit() {
