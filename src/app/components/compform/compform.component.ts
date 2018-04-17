@@ -23,7 +23,7 @@ export class CompformComponent implements OnInit {
     'Health'
   ];
 
-  constructor(private fb: FormBuilder, private webService: WebService ) {
+  constructor(private fb: FormBuilder, private webService: WebService, private location: Location) {
     this.createForm();
   }
 
@@ -84,6 +84,7 @@ export class CompformComponent implements OnInit {
 
   onSubmit() {
     $('button.btn-s')[0].disabled = true;
+    this.compForm.value['status'] = 'open';
     this.webService.postMessages(this.compForm.value);
     console.log(JSON.stringify(this.compForm.value));
         this.compForm.reset();
