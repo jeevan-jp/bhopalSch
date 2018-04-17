@@ -61,7 +61,35 @@
             </mat-hint>
           </mat-form-field>
         </p>
-        <button mat-raised-button [disabled]="signupForm.invalid" class="btn-s">Submit</button>
+        <p>
+          <mat-form-field class="full-width" dividerColor="{{formErrors.password?'warn':'primary'}}">
+            <input matInput type="password" placeholder="Password" [(ngModel)]="signupForm.password"
+              formControlName ="password" required>
+            <mat-hint>
+              <span [hidden]="!(formErrors.password)">
+                {{ formErrors.password }}
+              </span>
+            </mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="full-width" dividerColor="{{formErrors.confirmPassword?'warn':'primary'}}">
+            <input matInput type="password" placeholder="Confirm Password" [(ngModel)]="signupForm.confirmPassword"
+              formControlName="confirmPassword" required>
+            <mat-hint>
+              <span [hidden]="!(formErrors.confirmPassword)">
+                {{ formErrors.confirmPassword }}
+              </span>
+            </mat-hint>
+          </mat-form-field>
+        </p>
+        <div style="display: flex;">
+          <span class="flex-spacer"></span>
+          <button mat-raised-button (click)="resetForm()">Reset</button>&nbsp;&nbsp;
+          <button mat-raised-button [disabled]="signupForm.invalid" class="btn-s">Submit</button>
+        </div>
+        <br>
+        <span *ngIf="signupForm.errors?.mismatchedFields">Passwords do not match</span>
       </form>
     </div>
   </div>

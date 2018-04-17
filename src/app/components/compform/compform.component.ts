@@ -43,8 +43,7 @@ export class CompformComponent implements OnInit {
     },
     'description': {
       'required': 'Description title is required.',
-      'minlength': 'Description must be at least 10 characters long.',
-      'maxlength': 'Description cannot be more than 500 characters long.'
+      'minlength': 'Description must be at least 10 characters long.'
     }
   };
 
@@ -52,7 +51,7 @@ export class CompformComponent implements OnInit {
     this.compForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
       dept: ['', Validators.required],
-      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(350)]]
+      description: ['', [Validators.required, Validators.minLength(10)]]
     });
     this.compForm.valueChanges
       .subscribe((data) => {
