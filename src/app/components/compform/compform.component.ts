@@ -1,3 +1,4 @@
+import { WebService } from './../../web.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,7 +23,7 @@ export class CompformComponent implements OnInit {
     'Health'
   ];
 
-  constructor(private fb: FormBuilder, private location: Location) {
+  constructor(private fb: FormBuilder, private webService: WebService, private location: Location) {
     this.createForm();
   }
 
@@ -83,13 +84,13 @@ export class CompformComponent implements OnInit {
 
   onSubmit() {
     $('button.btn-s')[0].disabled = true;
+    this.compForm.value['status'] = 'open';
+    this.webService.postMessages(this.compForm.value);
     console.log(JSON.stringify(this.compForm.value));
-    this.compForm.reset();
-    document.location.reload();
+        this.compForm.reset();
     // The submission to server code goes here.
   }
 
   ngOnInit() {
   }
-
 }
