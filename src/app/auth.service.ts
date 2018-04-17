@@ -19,15 +19,15 @@ export class AuthService {
     register(user) {
         delete user.confirmPassword;
        this.http.post(this.BASE_URL + '/register', user).subscribe(res => {
-           var authResponse = res.json(); 
-           if(!authResponse.token){
+           const authResponse = res.json();
+           if (!authResponse.token) {
               return; }
         localStorage.setItem(this.TOKEN_KEY, authResponse.token);
            localStorage.setItem(this.NAME_KEY, authResponse.firstName);
            this.router.navigate(['/']);
        });
     }
-    logout() {   
+    logout() {
         localStorage.removeItem(this.NAME_KEY);
         localStorage.removeItem(this.TOKEN_KEY);
     }
