@@ -23,7 +23,7 @@ export class CompformComponent implements OnInit {
     'Health'
   ];
 
-  constructor(private fb: FormBuilder, private webService: WebService ) {
+  constructor(private fb: FormBuilder, private webService: WebService, private location: Location) {
     this.createForm();
   }
 

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class WebService {
 
-    BASE_URL = 'http://localhost:1234';
+    BASE_URL = 'http://localhost:1234/api';
     constructor(private http: Http) {
 
     }
