@@ -1,5 +1,5 @@
 export class Complaint {
     title: string;
-    body: string;
+    department: string;
     id: number;
 }
