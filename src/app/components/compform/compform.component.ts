@@ -87,7 +87,7 @@ export class CompformComponent implements OnInit {
     this.compForm.value['status'] = 'open';
     this.webService.postMessages(this.compForm.value);
     console.log(JSON.stringify(this.compForm.value));
-        this.compForm.reset();
+    this.compForm.reset();
     // The submission to server code goes here.
   }
 
