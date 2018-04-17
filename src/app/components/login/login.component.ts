@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
 
   login() {
 
-     // console.log(this.loginData);
-    this.auth.login(loginData);
+     console.log(this.loginData);
+    // this.auth.login(loginData);
 
   }
 
