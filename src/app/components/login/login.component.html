@@ -1,17 +1,29 @@
-<form>
+<form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
   <mat-dialog-content>
-    <mat-form-field class="full-width">
-      <input  matInput [(ngModel)] = "loginData.email" [ngModelOptions]="{standalone: true}" placeholder="Email-id"  >
+    <mat-form-field class="full-width" dividerColor="{{formErrors.email?'warn':'primary'}}">
+      <input  matInput [(ngModel)] = "loginForm.email" 
+        formControlName="email" placeholder="Email-id" required>
+      <mat-hint>
+        <span [hidden]="!(formErrors.email)">
+          {{ formErrors.email }}
+        </span>
+      </mat-hint>
     </mat-form-field>
-    <mat-form-field class="full-width">
-      <input  matInput  [(ngModel)] = "loginData.password" [ngModelOptions]="{standalone: true}" placeholder="Password"  >
+    <mat-form-field class="full-width" dividerColor="{{formErrors.password?'warn':'primary'}}">
+      <input  matInput  [(ngModel)] = "loginForm.password"
+       formControlName="password" placeholder="Password" required>
+      <mat-hint>
+        <span [hidden]="!(formErrors.password)">
+          {{ formErrors.password }}
+        </span>
+      </mat-hint>
     </mat-form-field>
     <br>
   </mat-dialog-content>
   <mat-dialog-actions>
     <span class="flex-spacer"></span>
     <button mat-raised-button mat-dialog-close>Close</button>
-    <button mat-raised-button class="btn-s" disabled="form.invalid"
+    <button mat-raised-button class="btn-s" [disabled]="loginForm.invalid"
       [mat-dialog-close]="true">Login</button>
   </mat-dialog-actions>
 </form>
