@@ -9,6 +9,10 @@ import { AppRoutingModule } from '../app/app-routing/app-routing.module';
 import { MaterialModule } from './material/material.module';
 
 import 'hammerjs';
+import {  MatButtonModule, MatCheckboxModule, MatDatepickerModule, MatFormFieldModule,
+  MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule,
+  MatSlideToggleModule, MatToolbarModule, MatListModule, MatGridListModule,
+  MatCardModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -45,7 +49,15 @@ import { HttpModule } from '@angular/http';
     BrowserAnimationsModule,
     AppRoutingModule,
     MaterialModule,
-    HttpModule
+    HttpModule,
+    //by jatin
+    BrowserModule, BrowserAnimationsModule, MatButtonModule, MatCheckboxModule, MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule, MatRadioModule, MatSelectModule, MatSliderModule,
+    MatSlideToggleModule, MatToolbarModule, MatListModule, MatGridListModule,
+    MatCardModule, MatIconModule, MatProgressSpinnerModule, MatDialogModule, FlexLayoutModule,
+    AppRoutingModule,
+    //till here
   ],
   providers: [WebService ],
   bootstrap: [AppComponent]

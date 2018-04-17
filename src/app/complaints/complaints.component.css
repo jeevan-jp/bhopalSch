@@ -1,0 +1,17 @@
+.jumbotron {
+  margin-top:20px;
+  margin-bottom:10px;
+  background: linear-gradient(to bottom right, #993333 0%, #003366 100%) !important;
+}
+.card-style{
+
+  margin:0 auto 20px auto;
+
+  background:#f3a683;
+  min-width: 50%;
+  max-width:80%;
+}
+/* .container{
+  max-width: 80%;
+  min-width: 50%;
+} */
