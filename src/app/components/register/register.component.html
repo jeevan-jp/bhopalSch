@@ -1,5 +1,6 @@
 <div class="dabba">
   <form class="example-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <h1> New user registration</h1> <br>
     <p>      
       <mat-form-field class="half-width" dividerColor="{{formErrors.firstName?'warn':'primary'}}">
         <input matInput placeholder="First Name" [(ngModel)]="registerForm.firstName"
@@ -58,7 +59,7 @@
     <button mat-raised-button (click)="resetForm()">Reset</button>
     <button mat-raised-button class="btn-s" [disabled]="registerForm.invalid">Register</button>
     <br>
-    <span *ngIf="registerForm.errors?.mismatchedFields">Passwords do not match</span>
+    <span *ngIf="registerForm.errors?.mismatchedFields" style="color: rgb(255, 174, 0)">Passwords do not match</span>
     <br>
     </form>
 </div>
