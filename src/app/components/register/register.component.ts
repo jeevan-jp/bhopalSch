@@ -9,41 +9,102 @@ import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  form;
-  constructor(private fb: FormBuilder, private auth: AuthService) {
-    this.form = fb.group({
 
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, emailValid()]],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
-    }, { validator: matchingFields('password', 'confirmPassword')});
+  registerForm: FormGroup;
+  formErrors = {
+    'firstName': '',
+    'lastName': '',
+    'email': '',
+    'password': '',
+    'confirmPassword': ''
+  };
+
+  validationMessages = {
+    'firstName': {
+      'required': 'First name is required.',
+      'minlength': 'First name must be at least 3 characters long.',
+      'maxlength': 'First name cannot be more than 15 characters long.'
+    },
+    'lastName': {
+      'required': 'Last name is required.',
+      'minlength': 'Last name must be at least 3 characters long.',
+      'maxlength': 'Last name cannot be more than 15 characters long.'
+    },
+    'email': {
+      'required': 'EmailId is required.',
+      'email': 'Email not in valid format.'
+    },
+    'password': {
+      'required': 'Password is required.',
+      'minlength': 'Password must be at least 8 characters long.',
+      'maxlength': 'Password cannot be more than 50 characters long.'
+    },
+    'confirmPassword': {
+      'required': 'Confirm Password is required.',
+      'minlength': 'Confirm Password must be at least 8 characters long.',
+      'maxlength': 'Confirm Password cannot be more than 50 characters long.'
+    }
+  };
+
+  constructor(private fb: FormBuilder, private auth: AuthService) {
+    this.createForm();
   }
 
   ngOnInit() {
   }
+
+
+  createForm() {
+    this.registerForm = this.fb.group({
+      firstName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+      lastName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(50)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(50)]],
+    }, { validator: this.matchingFields('password', 'confirmPassword')});
+
+    this.registerForm.valueChanges
+    .subscribe((data) => {
+      this.onValueChanges(data);
+    });
+  }
+
   onSubmit() {
-    console.log(this.form.errors);
-    this.auth.register(this.form.value);
-  }
-  isValid(control) {
-    return this.form.controls[control].invalid && this.form.controls[control].touched;
+    // console.log(this.registerForm.errors);
+    console.log(this.registerForm.value);
+    this.auth.register(this.registerForm.value);
   }
 
-}
+  onValueChanges(data?: any): void {
+    if (!this.registerForm) { return; }
 
-function matchingFields(field1, field2) {
-  return form => {
-    if (form.controls[field1].value !== form.controls[field2].value) {
-      return { mismatchedFields: true };
+    const form = this.registerForm;
+    for (const field in this.formErrors) {
+      if (true) {
+        this.formErrors[field] = '';
+        const control = form.get(field);
+        if (control && control.dirty && !control.valid) {
+          // console.log(this.formErrors);
+          const messages = this.validationMessages[field];
+          for (const err in control.errors) {
+            if (true) {   // just doint this for TSLint:)
+              this.formErrors[field] += messages[err] + ' ';
+            }
+          }
+        }
+      }
     }
-  };
-}
+  }
 
-function emailValid() {
-   return control => {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(control.value) ? null : { invalidEmail: true };
-   }
+  resetForm() {
+    this.registerForm.reset();
+  }
+
+  matchingFields(field1, field2) {
+    return form => {
+      if (form.controls[field1].value !== form.controls[field2].value) {
+        return { mismatchedFields: true };
+      }
+    };
+  }
 }
