@@ -1,12 +1,17 @@
 import { AuthService } from './../../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
+import { expand, flyInOut } from '../../animations/app.animations';
 
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+  animations: [
+    flyInOut(),
+    expand()
+  ]
 })
 export class RegisterComponent implements OnInit {
 

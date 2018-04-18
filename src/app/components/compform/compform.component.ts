@@ -2,12 +2,17 @@ import { WebService } from './../../web.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
 import { Router } from '@angular/router';
+import { flyInOut, expand } from '../../animations/app.animations';
 declare const $;
 
 @Component({
   selector: 'app-compform',
   templateUrl: './compform.component.html',
-  styleUrls: ['./compform.component.css']
+  styleUrls: ['./compform.component.css'],
+  animations: [
+    flyInOut(),
+    expand()
+  ]
 })
 export class CompformComponent implements OnInit {
 
