@@ -76,8 +76,9 @@ export class LoginComponent implements OnInit {
     $('button.btn-s')[0].disabled = true;
     this.openSnackBar(this.loginForm.value['email']);
     console.log(this.loginForm.value);
+    this.auth.login(this.loginForm.value);
     this.loginForm.reset();
-    // this.auth.login(loginForm);
+    
 
     this.dialogRef.close();
   }
