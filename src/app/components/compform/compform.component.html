@@ -7,7 +7,7 @@
       <form novalidate [formGroup]="compForm" (ngSubmit)="onSubmit()">
         <mat-form-field class="full-width" dividerColor="{{formErrors.title?'warn':'primary'}}">
           <input matInput [(ngModel)]="compForm.title" formControlName="title"
-            placeholder="Complaint title" type="text" required>
+            placeholder="Give your complaint a title" type="text" required>
           <mat-hint>
             <span [hidden]="!(formErrors.title)">
               {{ formErrors.title }}
@@ -45,9 +45,6 @@
         </p>
         <button mat-raised-button [disabled]="compForm.invalid" class="btn-s">Submit</button>
       </form>
-      <p>
-        FORM: {{ compForm.value | json }}
-      </p>
     </div>
   </div>
 </div>

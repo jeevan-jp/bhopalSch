@@ -1,0 +1,19 @@
+.btn-s {
+    background: #3f51b5;
+    color: #fff;
+}
+
+#showHidden {
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+}
+
+.dep {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    color: #3f51b5;
+}

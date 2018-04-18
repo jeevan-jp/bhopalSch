@@ -1,29 +1,21 @@
-<h1>LATEST COMPLAINTS</h1>
-<!-- <div class="container">
-  <div class=row>
+<div class="jumbotron">
 
-  <div class="comp" *ngFor = "let com of reverse">
-    <div class="clearfix" *ngIf="com.id>=reverse.length-4"></div>
-      <div class="col-sm-12 col-md-6 col-lg-4" >
-        <div class="title">
-          <p>{{com.title}}</p>
-        </div>
-        <div class="body">
-          <b>{{com.body}}</b>
-        </div>
-      </div>
-      <p>{{ com.title }}<br>{{ com.body }}</p>
-    </div>
-  </div>
-</div>
-</div> -->
-<div class="container">
-<div class="row">
-<div class="col-sm-12 col-md-6 col-lg-4">
-<p>Test</p>
+<div *ngIf="complaints">
+  <mat-card class="card-style" *ngFor="let comp of complaints">
+    <mat-card-header>
+      <mat-card-title>
+        <h3>{{comp.title | uppercase}}</h3>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{comp.body}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 </div>
-</div>
-
-
 
