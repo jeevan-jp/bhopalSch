@@ -30,7 +30,9 @@ export class SignupComponent implements OnInit {
     'firstname': '',
     'lastname': '',
     'dept': '',
-    'email': ''
+    'email': '',
+    'password': '',
+    'confirmPassword': ''
   };
 
   validationMessages = {
@@ -50,6 +52,16 @@ export class SignupComponent implements OnInit {
     'email': {
       'required': 'EmailId is required.',
       'email': 'Email not in valid format.'
+    },
+    'password': {
+      'required': 'Password is required.',
+      'minlength': 'Password must be at least 8 characters long.',
+      'maxlength': 'Password cannot be more than 50 characters long.'
+    },
+    'confirmPassword': {
+      'required': 'Confirm Password is required.',
+      'minlength': 'Confirm Password must be at least 8 characters long.',
+      'maxlength': 'Confirm Password cannot be more than 50 characters long.'
     }
   };
 
@@ -59,8 +71,10 @@ export class SignupComponent implements OnInit {
       firstname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       dept: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
-    });
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(50)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(50)]]
+    }, { validator: this.matchingFields('password', 'confirmPassword')});
     this.signupForm.valueChanges
       .subscribe((data) => {
         this.onValueChanges(data);
@@ -93,6 +107,20 @@ export class SignupComponent implements OnInit {
     console.log(JSON.stringify(this.signupForm.value));
     this.signupForm.reset();
     // The submission to server code goes here.
+  }
+
+  
+
+  resetForm() {
+    this.signupForm.reset();
+  }
+
+  matchingFields(field1, field2) {
+    return form => {
+      if (form.controls[field1].value !== form.controls[field2].value) {
+        return { mismatchedFields: true };
+      }
+    };
   }
 
   ngOnInit() {

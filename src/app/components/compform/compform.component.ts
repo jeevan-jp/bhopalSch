@@ -2,7 +2,6 @@ import { WebService } from './../../web.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Location } from '@angular/common';
 declare const $;
 
 @Component({
@@ -23,7 +22,7 @@ export class CompformComponent implements OnInit {
     'Health'
   ];
 
-  constructor(private fb: FormBuilder, private webService: WebService, private location: Location) {
+  constructor(private fb: FormBuilder, private webService: WebService) {
     this.createForm();
   }
 
@@ -44,8 +43,7 @@ export class CompformComponent implements OnInit {
     },
     'description': {
       'required': 'Description title is required.',
-      'minlength': 'Description must be at least 10 characters long.',
-      'maxlength': 'Description cannot be more than 500 characters long.'
+      'minlength': 'Description must be at least 10 characters long.'
     }
   };
 
@@ -53,7 +51,7 @@ export class CompformComponent implements OnInit {
     this.compForm = this.fb.group({
       title: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(50)]],
       dept: ['', Validators.required],
-      description: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(350)]]
+      description: ['', [Validators.required, Validators.minLength(10)]]
     });
     this.compForm.valueChanges
       .subscribe((data) => {
@@ -84,9 +82,10 @@ export class CompformComponent implements OnInit {
 
   onSubmit() {
     $('button.btn-s')[0].disabled = true;
+    this.compForm.value['status'] = 'open';
     this.webService.postMessages(this.compForm.value);
     console.log(JSON.stringify(this.compForm.value));
-        this.compForm.reset();
+    this.compForm.reset();
     // The submission to server code goes here.
   }
 
