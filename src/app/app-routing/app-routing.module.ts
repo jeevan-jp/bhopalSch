@@ -11,6 +11,7 @@ import { NotfoundComponent } from '../components/notfound/notfound.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { SignupComponent } from '../components/signup/signup.component';
 import { AdminviewComponent } from '../adminview/adminview.component';
+import { ComplaintSortedComponent } from '../complaint-sorted/complaint-sorted.component';
 export const routes:Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
@@ -23,6 +24,7 @@ export const routes:Routes = [
     { path: 'signupDep', component: SignupComponent },
     { path: 'admin', component: AdminviewComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
+    {path:'complaintSorted',component:ComplaintSortedComponent},
     { path: '**', redirectTo: 'pageNotFound', pathMatch: 'full' }
 ];
 
@@ -37,4 +39,4 @@ export const routes:Routes = [
 
 export class AppRoutingModule { }
 export const routingComponents =[HomeComponent,AboutComponent,ComplaintsComponent,CompformComponent,
-  ContactusComponent,NotfoundComponent,LoginComponent,RegisterComponent,SignupComponent,AdminviewComponent];
+  ContactusComponent,NotfoundComponent,LoginComponent,RegisterComponent,SignupComponent,AdminviewComponent,ComplaintSortedComponent];

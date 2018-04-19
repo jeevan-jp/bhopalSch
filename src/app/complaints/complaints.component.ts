@@ -18,10 +18,14 @@ export class ComplaintsComponent implements OnInit {
   constructor( private webService: WebService ) {}
 
   complaints: Complaint[];
+  
+  
+  compSortedAccToStatus:Complaint[];
   async ngOnInit() {
     const response = await this.webService.getMessages();
     console.log(response.json());
     this.complaints = response.json();
+    
   }
   // reverse: Complaint[] = this.complaints.sort((a
   //   : Complaint, b: Complaint) => {

@@ -35,7 +35,10 @@
                     formControlName="dept" aria-label="Number" matInput [matAutocomplete]="auto" required>
                   <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let dept of deptList" [value]="dept">
-                      {{ dept }}
+                      <i class="fa fa-frown-o" aria-hidden="true" *ngIf="dept==='electricity'"></i>
+                      <i class="fa fa-h-square" aria-hidden="true" *ngIf="dept==='Health'"></i>
+                      <i class="fa fa-bath" aria-hidden="true" *ngIf="dept==='water'"></i>
+                      {{ dept|uppercase }}
                     </mat-option>
                   </mat-autocomplete>
                   <mat-hint>
