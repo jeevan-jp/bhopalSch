@@ -53,14 +53,22 @@
 }
 mat-card {
     max-width: 300px;
-    max-height: 200px;
+    height: 400px;
     margin: 4px;
+    /* background:url("../../../assets/bg.jpg"); */
+    background-color:#fab1a0;
+      
+  }
+  mat-card-title-group{
+      height: 350px;;
   }
   #card-container {
       display: flex;
       flex-flow: row wrap;
       align-items: flex-start;
       margin: auto;
+      
+      /* backface-visibility:  */
         
   }
   .abcd{
@@ -87,7 +95,7 @@ mat-card-subtitle{
     
   overflow:hidden;
   width: 160px;
-  height:70px;
+  height:300px;
   /* height: 1.2em; */
   white-space: wrap;
 }
