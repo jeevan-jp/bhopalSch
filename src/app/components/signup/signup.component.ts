@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
 import { Router } from '@angular/router';
-import { expand, flyInOut } from '../../animations/app.animations';
+import { flyOutIn } from '../../animations/app.animations';
 declare const $;
 
 @Component({
@@ -9,8 +9,7 @@ declare const $;
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
   animations: [
-    flyInOut(),
-    expand()
+    flyOutIn()
   ]
 })
 export class SignupComponent implements OnInit {

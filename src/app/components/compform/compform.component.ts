@@ -2,7 +2,7 @@ import { WebService } from './../../web.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
 import { Router } from '@angular/router';
-import { flyInOut, expand } from '../../animations/app.animations';
+import { flyOutIn } from '../../animations/app.animations';
 declare const $;
 
 @Component({
@@ -10,8 +10,7 @@ declare const $;
   templateUrl: './compform.component.html',
   styleUrls: ['./compform.component.css'],
   animations: [
-    flyInOut(),
-    expand()
+    flyOutIn()
   ]
 })
 export class CompformComponent implements OnInit {
@@ -27,7 +26,7 @@ export class CompformComponent implements OnInit {
     'Health'
   ];
 
-  constructor(private fb: FormBuilder, private webService: WebService) {
+  constructor(private fb: FormBuilder, private webService: WebService, private route: Router) {
     this.createForm();
   }
 
@@ -91,6 +90,7 @@ export class CompformComponent implements OnInit {
     this.webService.postMessages(this.compForm.value);
     console.log(JSON.stringify(this.compForm.value));
     this.compForm.reset();
+    this.route.navigateByUrl('/ ');
     // The submission to server code goes here.
   }
 

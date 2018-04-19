@@ -2,15 +2,14 @@
 import { WebService } from './../web.service';
 import { Component, OnInit } from '@angular/core';
 import { Complaint } from '../models/complaints';
-import { flyInOut, expand } from '../animations/app.animations';
+import { glow } from '../animations/app.animations';
 
 @Component({
   selector: 'app-complaints',
   templateUrl: './complaints.component.html',
   styleUrls: ['./complaints.component.css'],
   animations: [
-    flyInOut(),
-    expand()
+    glow()
   ]
 })
 
