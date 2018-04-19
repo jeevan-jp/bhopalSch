@@ -20,6 +20,25 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<div id="card-container">
+  <mat-card class="abcd" *ngFor="let comp of complaints" >
+      <mat-card-title-group>
+      <mat-card-title><div class="temp1">{{comp.title}}</div></mat-card-title>
+      <div class="temp">
+      <mat-card-subtitle>{{comp.description}}</mat-card-subtitle>
+      </div>
+      </mat-card-title-group>
+      <mat-card-footer *ngIf="comp.status=='open'">
+        <i class="fa fa-circle open" ></i><span>{{comp.status}}</span>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="comp.status=='closed'">
+        <i class="fa fa-circle closed" ></i><span>{{comp.status}}</span>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="comp.status=='null'">
+        <i class="fa fa-circle" ></i><span>{{comp.status}}</span>
+      </mat-card-footer>
+  </mat-card>
+</div>
 <!-- <div class="pt-3 pb-3 grad" [@flyInOut]>
   <h1 class="head">Recent Complaints Uploaded</h1>
   <div class="container">
@@ -55,22 +74,3 @@
 
 </div>
 </div> -->
-<div id="card-container">
-  <mat-card class="abcd" *ngFor="let comp of complaints">
-      <mat-card-title-group>
-      <mat-card-title>{{comp.title}}</mat-card-title>
-      <div class="temp">
-      <mat-card-subtitle>{{comp.description}}</mat-card-subtitle>
-      </div>
-      </mat-card-title-group>
-
-  </mat-card>
- <!-- <mat-card>
-      <mat-card-title-group>
-      <img mat-card-sm-image src="https://image.freepik.com/free-photo/blue-surface-with-creases_1160-191.jpg">
-      <mat-card-title>One</mat-card-title>
-      <mat-card-subtitle>Is the first order in numeric</mat-card-subtitle>
-      </mat-card-title-group>
-  </mat-card>   -->
-
-</div>
