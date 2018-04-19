@@ -9,6 +9,7 @@ import { CompformComponent } from '../components/compform/compform.component';
 import { NotfoundComponent } from '../components/notfound/notfound.component';
 import { RegisterComponent } from '../components/register/register.component';
 import { SignupComponent } from '../components/signup/signup.component';
+import { AdminviewComponent } from '../adminview/adminview.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -20,6 +21,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'signupDep', component: SignupComponent },
+    { path: 'admin', component: AdminviewComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', redirectTo: 'pageNotFound', pathMatch: 'full' }
 ];
