@@ -20,7 +20,7 @@
               </mat-form-field>
               <p>
                 <mat-form-field class="full-width" dividerColor="{{formErrors.dept?'warn':'primary'}}">
-                  <input type="text" [(ngModel)]="compForm.dept" placeholder="Department" 
+                  <input type="text" [(ngModel)]="compForm.dept" placeholder="Department"
                     formControlName="dept" aria-label="Number" matInput [matAutocomplete]="auto" required>
                   <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let dept of deptList" [value]="dept">
@@ -38,8 +38,9 @@
               <h5><i>Description:</i></h5>
               <p>
                 <mat-form-field class="full-width" dividerColor="{{formErrors.description?'warn':'primary'}}">
-                  <textarea matInput [(ngModel)]="compForm.description" formControlName="description"
-                    placeholder="The description must contain all relevant details" required></textarea>
+                  <textarea matInput [(ngModel)]='compForm.description' formControlName="description"
+                    placeholder="The description must contain all relevant details" required>
+                  </textarea>
                   <mat-hint>
                       <span [hidden]="!(formErrors.description)">
                         {{ formErrors.description }}
