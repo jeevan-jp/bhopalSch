@@ -1,50 +1,59 @@
-<div class="container" fxLayoutGap="10px" fxLayout="column">
-  <div style="text-align: center;">
-    <h1>Complaint Form</h1>
-  </div>
+<div class="container" fxLayoutGap="50px" fxLayout="column" [@flyInOut]>
   <div class="spacer">
     <div fxFlex class="FormClass">
-      <form novalidate [formGroup]="compForm" (ngSubmit)="onSubmit()">
-        <mat-form-field class="full-width" dividerColor="{{formErrors.title?'warn':'primary'}}">
-          <input matInput [(ngModel)]="compForm.title" formControlName="title"
-            placeholder="Give your complaint a title" type="text" required>
-          <mat-hint>
-            <span [hidden]="!(formErrors.title)">
-              {{ formErrors.title }}
-            </span>
-          </mat-hint>
-        </mat-form-field>
-        <p>
-          <mat-form-field class="full-width" dividerColor="{{formErrors.dept?'warn':'primary'}}">
-            <input type="text" [(ngModel)]="compForm.dept" placeholder="Department" 
-              formControlName="dept" aria-label="Number" matInput [matAutocomplete]="auto" required>
-            <mat-autocomplete #auto="matAutocomplete">
-              <mat-option *ngFor="let dept of deptList" [value]="dept">
-                {{ dept }}
-              </mat-option>
-            </mat-autocomplete>
-            <mat-hint>
-                <span [hidden]="!(formErrors.dept)">
-                  {{ formErrors.dept }}
-                </span>
-            </mat-hint>
-          </mat-form-field>
-        </p>
-        <p>
-        <h5><i>Description:</i></h5>
-        <p>
-          <mat-form-field class="full-width" dividerColor="{{formErrors.description?'warn':'primary'}}">
-            <textarea matInput [(ngModel)]="compForm.description" formControlName="description"
-              placeholder="The description must contain all relevant details" required></textarea>
-            <mat-hint>
-                <span [hidden]="!(formErrors.description)">
-                  {{ formErrors.description }}
-                </span>
-            </mat-hint>
-          </mat-form-field>
-        </p>
-        <button mat-raised-button [disabled]="compForm.invalid" class="btn-s">Submit</button>
-      </form>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div style="text-align: center;">
+              <h1>Complaint Form</h1>
+          </div>
+        </mat-card-header>
+        <mat-card-content>
+          <form novalidate [formGroup]="compForm" (ngSubmit)="onSubmit()">
+              <mat-form-field class="full-width" dividerColor="{{formErrors.title?'warn':'primary'}}">
+                <input matInput [(ngModel)]="compForm.title" formControlName="title"
+                  placeholder="Give your complaint a title" type="text" required>
+                <mat-hint>
+                  <span [hidden]="!(formErrors.title)">
+                    {{ formErrors.title }}
+                  </span>
+                </mat-hint>
+              </mat-form-field>
+              <p>
+                <mat-form-field class="full-width" dividerColor="{{formErrors.dept?'warn':'primary'}}">
+                  <input type="text" [(ngModel)]="compForm.dept" placeholder="Department" 
+                    formControlName="dept" aria-label="Number" matInput [matAutocomplete]="auto" required>
+                  <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let dept of deptList" [value]="dept">
+                      {{ dept }}
+                    </mat-option>
+                  </mat-autocomplete>
+                  <mat-hint>
+                      <span [hidden]="!(formErrors.dept)">
+                        {{ formErrors.dept }}
+                      </span>
+                  </mat-hint>
+                </mat-form-field>
+              </p>
+              <p>
+              <h5><i>Description:</i></h5>
+              <p>
+                <mat-form-field class="full-width" dividerColor="{{formErrors.description?'warn':'primary'}}">
+                  <textarea matInput [(ngModel)]="compForm.description" formControlName="description"
+                    placeholder="The description must contain all relevant details" required></textarea>
+                  <mat-hint>
+                      <span [hidden]="!(formErrors.description)">
+                        {{ formErrors.description }}
+                      </span>
+                  </mat-hint>
+                </mat-form-field>
+              </p>
+              <button mat-raised-button [disabled]="compForm.invalid" class="btn-s">Submit</button>
+            </form>
+            <div style="margin-top: 10px">
+              If not registered? First <a routerLink="/register">SignUp</a>
+            </div>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
 </div>

@@ -94,7 +94,6 @@ export class LoginComponent implements OnInit {
   }
 
   closeDialog() {
-    console.log('closing');
     this.route.navigateByUrl('/register');
     this.dialogRef.close();
   }
@@ -102,7 +101,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     $('.dep').hide();
     $('#showHidden').on('click', () => {
-      $('.dep').toggle();
+      $('.dep').toggle(500);
     })
   }
 
