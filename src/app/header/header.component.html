@@ -10,13 +10,13 @@
 </mat-toolbar>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/cform">
+  <a mat-menu-item routerLink="/cform" routerLinkActive="active2">
     <span>Add Complaint</span>
-  </button>
-  <button mat-menu-item routerLink="/complaint">
+  </a>
+  <a mat-menu-item routerLink="/complaint" routerLinkActive="active2">
     <span MatTooltip="Login or signup!">Active Complaints</span>
-  </button>
-  <button mat-menu-item routerLink="/complaint">
+  </a>
+  <a mat-menu-item routerLink="/complaint">
     <span>All complaints</span>
-  </button>
+  </a>
 </mat-menu>

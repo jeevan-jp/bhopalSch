@@ -1,65 +1,79 @@
-<div class="dabba">
-  <form class="example-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <h1> New user registration</h1> <br>
-    <p>      
-      <mat-form-field class="half-width" dividerColor="{{formErrors.firstName?'warn':'primary'}}">
-        <input matInput placeholder="First Name" [(ngModel)]="registerForm.firstName"
-         formControlName ="firstName" required>
-         <mat-hint>
-          <span [hidden]="!(formErrors.firstName)">
-            {{ formErrors.firstName }}
-          </span>
-        </mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field class="half-width" dividerColor="{{formErrors.lastName?'warn':'primary'}}">
-        <input matInput placeholder="Last Name" [(ngModel)]="registerForm.lastName"
-         formControlName ="lastName" required>
-        <mat-hint>
-          <span [hidden]="!(formErrors.lastName)">
-            {{ formErrors.lastName }}
-          </span>
-        </mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field class="half-width" dividerColor="{{formErrors.email?'warn':'primary'}}">
-        <input matInput type="email" placeholder="Email" [(ngModel)]="registerForm.email"
-         formControlName ="email" required>
-        <mat-hint>
-          <span [hidden]="!(formErrors.email)">
-            {{ formErrors.email }}
-          </span>
-        </mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field class="half-width" dividerColor="{{formErrors.password?'warn':'primary'}}">
-        <input matInput type="password" placeholder="Password" [(ngModel)]="registerForm.password"
-         formControlName ="password" required>
-        <mat-hint>
-          <span [hidden]="!(formErrors.password)">
-            {{ formErrors.password }}
-          </span>
-        </mat-hint>
-      </mat-form-field>
-    </p>
-    <p>
-      <mat-form-field class="half-width" dividerColor="{{formErrors.confirmPassword?'warn':'primary'}}">
-        <input matInput type="password" placeholder="Confirm Password" [(ngModel)]="registerForm.confirmPassword"
-         formControlName="confirmPassword" required>
-        <mat-hint>
-          <span [hidden]="!(formErrors.confirmPassword)">
-            {{ formErrors.confirmPassword }}
-          </span>
-        </mat-hint>
-      </mat-form-field>
-    </p>
-    <button mat-raised-button (click)="resetForm()">Reset</button>
-    <button mat-raised-button class="btn-s" [disabled]="registerForm.invalid">Register</button>
-    <br>
-    <span *ngIf="registerForm.errors?.mismatchedFields" style="color: rgb(255, 174, 0)">Passwords do not match</span>
-    <br>
-    </form>
+<div class="container" fxLayoutGap="10px" fxLayout="column" [@flyInOut]>
+  <div class="spacer">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div style="text-align: center;">
+          <h3> New user registration</h3>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="FormClass" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <p>      
+            <mat-form-field class="full-width" dividerColor="{{formErrors.firstName?'warn':'primary'}}">
+              <input matInput placeholder="First Name" [(ngModel)]="registerForm.firstName"
+                formControlName ="firstName" required>
+                <mat-hint>
+                <span [hidden]="!(formErrors.firstName)">
+                  {{ formErrors.firstName }}
+                </span>
+              </mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="full-width" dividerColor="{{formErrors.lastName?'warn':'primary'}}">
+              <input matInput placeholder="Last Name" [(ngModel)]="registerForm.lastName"
+                formControlName ="lastName" required>
+              <mat-hint>
+                <span [hidden]="!(formErrors.lastName)">
+                  {{ formErrors.lastName }}
+                </span>
+              </mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="full-width" dividerColor="{{formErrors.email?'warn':'primary'}}">
+              <input matInput type="email" placeholder="Email" [(ngModel)]="registerForm.email"
+                formControlName ="email" required>
+              <mat-hint>
+                <span [hidden]="!(formErrors.email)">
+                  {{ formErrors.email }}
+                </span>
+              </mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="full-width" dividerColor="{{formErrors.password?'warn':'primary'}}">
+              <input matInput type="password" placeholder="Password" [(ngModel)]="registerForm.password"
+                formControlName ="password" required>
+              <mat-hint>
+                <span [hidden]="!(formErrors.password)">
+                  {{ formErrors.password }}
+                </span>
+              </mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="full-width" dividerColor="{{formErrors.confirmPassword?'warn':'primary'}}">
+              <input matInput type="password" placeholder="Confirm Password" [(ngModel)]="registerForm.confirmPassword"
+                formControlName="confirmPassword" required>
+              <mat-hint>
+                <span [hidden]="!(formErrors.confirmPassword)">
+                  {{ formErrors.confirmPassword }}
+                </span>
+              </mat-hint>
+            </mat-form-field>
+          </p>
+          <button mat-raised-button (click)="resetForm()">Reset</button>
+          <button mat-raised-button class="btn-s" [disabled]="registerForm.invalid">Register</button>
+          <br>
+          <span *ngIf="registerForm.errors?.mismatchedFields" style="color: rgb(255, 174, 0)">Passwords do not match</span>
+          <br>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
+
+
+
+

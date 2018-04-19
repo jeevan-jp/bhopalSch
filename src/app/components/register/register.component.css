@@ -1,11 +1,14 @@
-.dabba {
-    min-width: 300px;
-    max-width: 950px;
-    margin-left: 35%;
-    margin-top: 5vh;
-}
-
 .btn-s {
     background: #3f51b5;
     color: #fff;
+}
+
+.spacer {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    margin-top: 40px;
 }
