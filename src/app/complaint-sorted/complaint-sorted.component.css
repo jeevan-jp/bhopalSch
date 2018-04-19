@@ -1,0 +1,45 @@
+.jumbotron {
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    padding-top:20px;
+    background: rgba(226,226,226,1);
+    background: -moz-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(0%, rgba(254,254,254,1)), color-stop(100%, rgba(209,209,209,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 100%);
+    background: linear-gradient(135deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#d1d1d1', GradientType=1 );
+  }
+  .card-style{
+    font-family: comfortaa;
+    margin:0 auto 20px auto;
+    color:black;
+    /* background:#000; */
+    min-width: 50%;
+    max-width:80%;
+  
+  
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+-1,7db9e8+0,7db9e8+6,7db9e8+16,7db9e8+24,7db9e8+34,2989d8+68,2989d8+80,2989d8+88,207cca+99,1e5799+100&0.83+37,1+96 */
+  background: -moz-linear-gradient(top, rgba(125,185,232,0.83) -1%, rgba(125,185,232,0.83) 0%, rgba(125,185,232,0.83) 6%, rgba(125,185,232,0.83) 16%, rgba(125,185,232,0.83) 24%, rgba(125,185,232,0.83) 34%, rgba(118,181,231,0.83) 37%, rgba(41,137,216,0.92) 68%, rgba(41,137,216,0.95) 80%, rgba(41,137,216,0.98) 88%, rgba(34,128,206,1) 96%, rgba(32,124,202,1) 99%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(125,185,232,0.83) -1%,rgba(125,185,232,0.83) 0%,rgba(125,185,232,0.83) 6%,rgba(125,185,232,0.83) 16%,rgba(125,185,232,0.83) 24%,rgba(125,185,232,0.83) 34%,rgba(118,181,231,0.83) 37%,rgba(41,137,216,0.92) 68%,rgba(41,137,216,0.95) 80%,rgba(41,137,216,0.98) 88%,rgba(34,128,206,1) 96%,rgba(32,124,202,1) 99%,rgba(30,87,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(125,185,232,0.83) -1%,rgba(125,185,232,0.83) 0%,rgba(125,185,232,0.83) 6%,rgba(125,185,232,0.83) 16%,rgba(125,185,232,0.83) 24%,rgba(125,185,232,0.83) 34%,rgba(118,181,231,0.83) 37%,rgba(41,137,216,0.92) 68%,rgba(41,137,216,0.95) 80%,rgba(41,137,216,0.98) 88%,rgba(34,128,206,1) 96%,rgba(32,124,202,1) 99%,rgba(30,87,153,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d47db9e8', endColorstr='#1e5799',GradientType=0 );
+  }
+  /* .container{
+    max-width: 80%;
+    min-width: 50%;
+  } */
+  i{
+    margin-left: 30px;
+  }
+  .open{
+    color:blue;
+  }
+  .closed{
+     color:red;
+  }
+  mat-card-footer span{
+    margin-left: 10px;
+  }
+  

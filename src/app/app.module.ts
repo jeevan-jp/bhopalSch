@@ -14,14 +14,15 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpModule } from '@angular/http';
 import { AuthService } from './auth.service';
-import {routingComponents}  from './app-routing/app-routing.module'
+import {routingComponents}  from './app-routing/app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
     ComplaintsComponent,
     FooterComponent,
     HeaderComponent,
-    routingComponents
+    routingComponents,
+    
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,15 @@
+<div class="container">
+<div class="dropdown mx-auto mt-3">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" routerLink="/complaintSorted">Status</a>
+      <a class="dropdown-item" href="#">date</a>
+      <a class="dropdown-item" routerLink="/complaint">normal</a>
+    </div>
+  </div>
+</div>
 <div class="jumbotron" [@glow]>
   <div *ngIf="complaints">
     <mat-card class="card-style" *ngFor="let comp of complaints">
