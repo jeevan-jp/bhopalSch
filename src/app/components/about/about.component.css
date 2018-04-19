@@ -1,0 +1,11 @@
+.container{
+    margin-top: 100px;
+    margin-bottom: 150px;
+    align-self: auto;
+}
+
+
+.example-card{
+    background-color: antiquewhite;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
