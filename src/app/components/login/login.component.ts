@@ -73,10 +73,8 @@ export class LoginComponent implements OnInit {
 
   login() {
 
-<<<<<<< HEAD
      // console.log(this.loginData);
     //this.auth.login(loginData);
-=======
     $('button.btn-s')[0].disabled = true;
     this.openSnackBar(this.loginForm.value['email']);
     console.log(this.loginForm.value);
@@ -94,7 +92,6 @@ export class LoginComponent implements OnInit {
     });
     return;
   }
->>>>>>> f0a4da2cb8c344655a75d3c3a2922dc4853bf8ec
 
   closeDialog() {
     console.log('closing');
