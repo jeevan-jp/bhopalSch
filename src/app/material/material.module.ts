@@ -11,7 +11,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   imports: [
@@ -27,7 +29,9 @@ import {MatCardModule} from '@angular/material/card';
     MatRadioModule,
     MatDialogModule,
     MatSnackBarModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule,
+    MatTooltipModule
   ],
   exports: [
     MatButtonModule,
@@ -41,7 +45,9 @@ import {MatCardModule} from '@angular/material/card';
     MatRadioModule,
     MatDialogModule,
     MatSnackBarModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule,
+    MatTooltipModule
   ],
   declarations: []
 })
