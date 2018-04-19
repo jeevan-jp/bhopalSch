@@ -17,6 +17,17 @@
     border: 1px solid #000000;
 
 } */
+
+/* 
+.card-style{
+    margin:0 auto 20px auto;
+    background:#f3a683;
+    min-width: 50%;
+    max-width:80%;
+    flex-wrap: wrap;
+    flex-basis: 30%;
+} */
+
 .head{
     width: 100%;
     text-align: center;
@@ -40,16 +51,6 @@
     display: flex !important;
     flex-flow: row !important;
 }
-
-.card-style{
-    margin:0 auto 20px auto;
-    background:#f3a683;
-    min-width: 50%;
-    max-width:80%;
-    flex-wrap: wrap;
-    flex-basis: 30%;
-}
-
 mat-card {
     max-width: 300px;
     max-height: 200px;
@@ -60,18 +61,50 @@ mat-card {
       flex-flow: row wrap;
       align-items: flex-start;
       margin: auto;
-
+        
   }
   .abcd{
+      margin:50px auto;
+      text-transform: uppercase;
     flex-wrap: wrap;
     flex-grow: 2;
     flex-shrink: 1.5;
     flex-basis: 30%;
-
+    font:12px;
+    font-family: comfortaa;
 }
+mat-card-subtitle{
+    display: contents;
+}
+/* mat-card-title{
+    max-height: 30px;
+    max-height:30px;
+    display: contents;
+    overflow: hidden;
+
+} */
 .temp{
-  overflow: scroll;
+    
+  overflow:hidden;
   width: 160px;
-  height: 1.2em;
+  height:70px;
+  /* height: 1.2em; */
   white-space: wrap;
 }
+.temp1{
+    
+    overflow:hidden;
+    width: 100px;
+    height:70px;
+    /* height: 1.2em; */
+    white-space: normal;
+  }
+ .open{
+    color:blue;
+ }
+ .closed{
+     color:red;
+ }
+ i{
+     margin-left: 20px;
+ }
