@@ -14,6 +14,15 @@
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
       </mat-card-actions>
+      <mat-card-footer *ngIf="comp.status=='open'">
+        <i class="fa fa-circle open" ></i><span>{{comp.status|uppercase}}</span>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="comp.status=='closed'">
+        <i class="fa fa-circle closed" ></i><span>{{comp.status}}</span>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="comp.status=='null'">
+        <i class="fa fa-circle" ></i><span>{{comp.status}}</span>
+      </mat-card-footer>
     </mat-card>
   </div>
 </div>
