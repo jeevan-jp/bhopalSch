@@ -30,13 +30,13 @@
       <mat-card-content>{{comp.description}}</mat-card-content>
       </div>
       <mat-card-footer *ngIf="comp.status=='open'">
-        <i class="fa fa-circle open" ></i><span>{{comp.status}}</span>
+        <i class="fa fa-circle open" ></i>&nbsp;<span>Issue {{comp.status}}</span>
       </mat-card-footer>
       <mat-card-footer *ngIf="comp.status=='closed'">
-        <i class="fa fa-circle closed" ></i><span>{{comp.status}}</span>
+        <i class="fa fa-circle closed" ></i>&nbsp;<span>Issue{{comp.status}}</span>
       </mat-card-footer>
       <mat-card-footer *ngIf="comp.status=='null'">
-        <i class="fa fa-circle" ></i><span>{{comp.status}}</span>
+        <i class="fa fa-circle" ></i><span>&nbsp;Issue {{comp.status}}</span>
       </mat-card-footer>
   </mat-card>
 </div>
