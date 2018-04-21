@@ -4,7 +4,7 @@
       <img class="d-block w-100" src="/assets/images/bhopal1.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="/assets/images/bhopal2.jpg" alt="Second slide">
+      <img class="d-block w-100" src="/assets/images/bhopal4.png" alt="Second slide">
 
     </div>
     <div class="carousel-item">
@@ -20,17 +20,24 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="pt-3 pb-3 grad" [@flyInOut]>
-  <h1 class="head">Recent Complaints Uploaded</h1>
-  <div class="container">
-    <div class="flexDesign">
-      <div class=" mr-1 mb-1 sty" *ngFor="let comp of complaints">
-        <h2>{{comp.title}}</h2>
-        <p>{{comp.department}}</p>
-        <p>
-          <a class="btn btn-secondary" href="#" role="button">View details &raquo;</a>
-        </p>
+<div class="container">
+<div id="card-container" [@glow]>
+  <mat-card class="abcd" *ngFor="let comp of complaints" >
+      <mat-card-title-group>
+      <mat-card-title><div class="temp1">{{comp.title}}</div></mat-card-title>
+    </mat-card-title-group>
+      <div class="temp">
+      <mat-card-content>{{comp.description}}</mat-card-content>
       </div>
-    </div>
-  </div>
+      <mat-card-footer *ngIf="comp.status=='open'">
+        <i class="fa fa-circle open" ></i>&nbsp;<span>Issue {{comp.status}}</span>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="comp.status=='closed'">
+        <i class="fa fa-circle closed" ></i>&nbsp;<span>Issue{{comp.status}}</span>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="comp.status=='null'">
+        <i class="fa fa-circle" ></i><span>&nbsp;Issue {{comp.status}}</span>
+      </mat-card-footer>
+  </mat-card>
+</div>
 </div>

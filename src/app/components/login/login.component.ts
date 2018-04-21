@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
     //this.auth.login(loginData);
     $('button.btn-s')[0].disabled = true;
     this.openSnackBar(this.loginForm.value['email']);
-    console.log(this.loginForm.value);
+    // console.log(this.loginForm.value);
     this.auth.login(this.loginForm.value);
     this.loginForm.reset();
     
@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
   }
 
   openSnackBar(email): Observable<any> {
-    console.log('done');
+    // console.log('done');
     this.snack.open('Logged in as!', email, {
       duration: 4000,
     });

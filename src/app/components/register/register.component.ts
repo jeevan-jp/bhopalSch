@@ -1,7 +1,7 @@
 import { AuthService } from './../../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
-import { expand, flyInOut } from '../../animations/app.animations';
+import { flyInOut } from '../../animations/app.animations';
 
 
 @Component({
@@ -9,8 +9,7 @@ import { expand, flyInOut } from '../../animations/app.animations';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
   animations: [
-    flyInOut(),
-    expand()
+    flyInOut()
   ]
 })
 export class RegisterComponent implements OnInit {
@@ -102,7 +101,7 @@ export class RegisterComponent implements OnInit {
   }
 
   resetForm() {
-    this.registerForm.reset();
+    this.registerForm.reset({});
   }
 
   matchingFields(field1, field2) {

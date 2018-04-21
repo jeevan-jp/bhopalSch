@@ -1,4 +1,4 @@
-<div class="container" fxLayoutGap="50px" fxLayout="column" [@flyInOut]>
+<div class="container" fxLayoutGap="50px" fxLayout="column" [@flyOutIn]>
   <div class="spacer">
     <div fxFlex class="FormClass">
       <mat-card class="example-card">
@@ -19,12 +19,26 @@
                 </mat-hint>
               </mat-form-field>
               <p>
+                <mat-form-field class="full-width" dividerColor="{{formErrors.mobile?'warn':'primary'}}">
+                  <input matInput [(ngModel)]="compForm.mobile" formControlName="mobile"
+                    placeholder="Enter your contact number" type="tel" required>
+                  <mat-hint>
+                    <span [hidden]="!(formErrors.mobile)">
+                      {{ formErrors.mobile }}
+                    </span>
+                  </mat-hint>
+                </mat-form-field>
+              </p>
+              <p>
                 <mat-form-field class="full-width" dividerColor="{{formErrors.dept?'warn':'primary'}}">
-                  <input type="text" [(ngModel)]="compForm.dept" placeholder="Department" 
+                  <input type="text" [(ngModel)]="compForm.dept" placeholder="Department"
                     formControlName="dept" aria-label="Number" matInput [matAutocomplete]="auto" required>
                   <mat-autocomplete #auto="matAutocomplete">
                     <mat-option *ngFor="let dept of deptList" [value]="dept">
-                      {{ dept }}
+                      <i class="fa fa-frown-o" aria-hidden="true" *ngIf="dept==='electricity'"></i>
+                      <i class="fa fa-h-square" aria-hidden="true" *ngIf="dept==='Health'"></i>
+                      <i class="fa fa-bath" aria-hidden="true" *ngIf="dept==='water'"></i>
+                      {{ dept|uppercase }}
                     </mat-option>
                   </mat-autocomplete>
                   <mat-hint>
@@ -34,12 +48,45 @@
                   </mat-hint>
                 </mat-form-field>
               </p>
-              <p>
+              <div id="municipal">
+                <mat-form-field class="full-width">
+                  <textarea matInput [(ngModel)]="compForm.address" formControlName="address"
+                    placeholder="Type your Address" type="text"></textarea>
+                </mat-form-field>
+                <section id="location" class="full-width">
+                  <mat-checkbox matTooltip="Allow location access, this is required" [(ngModel)]="compForm.location" formControlName="location"
+                    id="check">Allow Location</mat-checkbox>
+                </section>
+              </div>
+              <div id="electricity" class="flex-spacer">
+                <mat-form-field class="full-width">
+                  <input matInput [(ngModel)]="compForm.ivrs" formControlName="ivrs"
+                    placeholder="IVRS number" type="number">
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                  <mat-select [(value)]="compForm.division" placeholder="Select Division"
+                    formControlName="division">
+                    <mat-option>None</mat-option>
+                    <mat-option value="bhopal">Bhopal</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="compForm.division" class="full-width" [@glow]>
+                  <mat-select [(value)]="compForm.district" placeholder="Select District"
+                    formControlName="district">
+                    <mat-option value="bhopal">Bhopal District</mat-option>
+                    <mat-option value="raisen">Raisen District</mat-option>
+                    <mat-option value="rajgarh">Rajgarh District</mat-option>
+                    <mat-option value="sehore">Sehore District</mat-option>
+                    <mat-option value="vidisha">Vidisha District</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div> <br>
               <h5><i>Description:</i></h5>
               <p>
                 <mat-form-field class="full-width" dividerColor="{{formErrors.description?'warn':'primary'}}">
-                  <textarea matInput [(ngModel)]="compForm.description" formControlName="description"
-                    placeholder="The description must contain all relevant details" required></textarea>
+                  <textarea id="textarea" matInput [(ngModel)]='compForm.description' formControlName="description"
+                    placeholder="The description must contain all relevant details" required>
+                  </textarea>
                   <mat-hint>
                       <span [hidden]="!(formErrors.description)">
                         {{ formErrors.description }}
@@ -47,7 +94,8 @@
                   </mat-hint>
                 </mat-form-field>
               </p>
-              <button mat-raised-button [disabled]="compForm.invalid" class="btn-s">Submit</button>
+              <button mat-raised-button [disabled]="compForm.invalid" 
+                (click)="openSnackBar('Complaint submitted', 'status: open')" class="btn-s">Submit</button>
             </form>
             <div style="margin-top: 10px">
               If not registered? First <a routerLink="/register">SignUp</a>
