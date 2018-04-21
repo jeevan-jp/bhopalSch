@@ -33,12 +33,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d47db9e8', e
 i{
   margin-left: 30px;
 }
-.open{
+/* .open{
   color:blue;
 }
 .closed{
    color:red;
-}
+} */
 mat-card-footer span{
   margin-left: 10px;
 }
