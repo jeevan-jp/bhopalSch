@@ -115,14 +115,14 @@ export class CompformComponent implements OnInit {
     let longitude;
     $(`#electricity`).hide();
     $(`#municipal`).hide();
-    console.log(this.compForm);
+    // console.log(this.compForm);
     this.compForm.controls['dept'].valueChanges
       .subscribe((data) => {  
       $(`#electricity`).hide();
       $(`#municipal`).hide();
         if(data === 'electricity' || data === 'municipal') {
           $(`#${data}`).show(1000);
-          console.log(data);
+          // console.log(data);
         }
       });
 

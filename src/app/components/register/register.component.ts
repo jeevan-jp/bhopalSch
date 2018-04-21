@@ -101,7 +101,7 @@ export class RegisterComponent implements OnInit {
   }
 
   resetForm() {
-    this.registerForm.reset();
+    this.registerForm.reset({});
   }
 
   matchingFields(field1, field2) {
