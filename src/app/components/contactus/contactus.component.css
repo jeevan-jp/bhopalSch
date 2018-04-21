@@ -1,6 +1,12 @@
 .example-card{
-    margin-top: 100px;
-    margin-bottom: 50px;
     width: 400px;
     background-color: beige;
 }
+
+
+
+.container{
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
