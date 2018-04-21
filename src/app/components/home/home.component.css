@@ -27,7 +27,8 @@ mat-card {
     height: 400px;
     /* margin: 4px; */
     /* background:url("../../../assets/bg.jpg"); */
-    background-color:#fab1a0;    
+    background-color:#F8EFBA;
+
   }
   #card-container {
       display: flex;
@@ -46,7 +47,7 @@ mat-card {
     font-family: comfortaa;
 }
 mat-card-content{
-    display: contents;
+    display: inline-flex;
 }
  mat-card-title-group{
      text-align: center;
@@ -54,14 +55,16 @@ mat-card-content{
      margin-left: auto;
      margin-right: auto;
  }
+
 .temp{
   overflow-x:hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   min-width: 100px;
   max-width: 300px;
   min-height: 200px;
   max-height:300px;
-  white-space:pre-line;
+  white-space:normal;
+  padding-top:0;
 }
 .temp1{
     overflow:hidden;
@@ -74,7 +77,7 @@ mat-card-content{
     color:blue;
  }
  .closed{
-     color:red;
+     color:green;
  }
  i{
      margin-left: 20px;
