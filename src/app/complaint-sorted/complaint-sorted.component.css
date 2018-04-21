@@ -18,8 +18,8 @@
     /* background:#000; */
     min-width: 50%;
     max-width:80%;
-  
-  
+
+
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7db9e8+-1,7db9e8+0,7db9e8+6,7db9e8+16,7db9e8+24,7db9e8+34,2989d8+68,2989d8+80,2989d8+88,207cca+99,1e5799+100&0.83+37,1+96 */
   background: -moz-linear-gradient(top, rgba(125,185,232,0.83) -1%, rgba(125,185,232,0.83) 0%, rgba(125,185,232,0.83) 6%, rgba(125,185,232,0.83) 16%, rgba(125,185,232,0.83) 24%, rgba(125,185,232,0.83) 34%, rgba(118,181,231,0.83) 37%, rgba(41,137,216,0.92) 68%, rgba(41,137,216,0.95) 80%, rgba(41,137,216,0.98) 88%, rgba(34,128,206,1) 96%, rgba(32,124,202,1) 99%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(125,185,232,0.83) -1%,rgba(125,185,232,0.83) 0%,rgba(125,185,232,0.83) 6%,rgba(125,185,232,0.83) 16%,rgba(125,185,232,0.83) 24%,rgba(125,185,232,0.83) 34%,rgba(118,181,231,0.83) 37%,rgba(41,137,216,0.92) 68%,rgba(41,137,216,0.95) 80%,rgba(41,137,216,0.98) 88%,rgba(34,128,206,1) 96%,rgba(32,124,202,1) 99%,rgba(30,87,153,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -33,13 +33,12 @@
   i{
     margin-left: 30px;
   }
-  .open{
+  /* .open{
     color:blue;
   }
   .closed{
-     color:red;
-  }
+     color:green;
+  } */
   mat-card-footer span{
     margin-left: 10px;
   }
-  

@@ -41,3 +41,21 @@ mat-hint > span {
   margin-top: 20px;
   margin-bottom: 40px;
 }
+.open{
+  color:blue;
+}
+.closed{
+   color:darkgreen;
+}
+.ignored{
+  color:red;
+}
+.invalid{
+  color: yellow;
+}
+.progress{
+ color:indigo;
+}
+.assigned{
+  color:snow;
+}

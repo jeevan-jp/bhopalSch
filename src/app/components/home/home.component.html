@@ -21,23 +21,44 @@
   </a>
 </div>
 <div class="container">
-<div id="card-container" [@glow]>
-  <mat-card class="abcd" *ngFor="let comp of complaints" >
+  <div id="card-container" [@glow]>
+    <mat-card class="abcd" *ngFor="let comp of five">
       <mat-card-title-group>
-      <mat-card-title><div class="temp1">{{comp.title}}</div></mat-card-title>
-    </mat-card-title-group>
+        <mat-card-title>
+          <div class="temp1">{{comp.title}}</div>
+        </mat-card-title>
+      </mat-card-title-group>
       <div class="temp">
-      <mat-card-content>{{comp.description}}</mat-card-content>
+        <mat-card-content>{{comp.description}}</mat-card-content>
       </div>
-      <mat-card-footer *ngIf="comp.status=='open'">
-        <i class="fa fa-circle open" ></i>&nbsp;<span>Issue {{comp.status}}</span>
+      <mat-card-footer *ngIf="comp.status==='open'">
+        <i class="fa fa-circle open"></i>
+        <span>{{comp.status|uppercase}}</span>
       </mat-card-footer>
-      <mat-card-footer *ngIf="comp.status=='closed'">
-        <i class="fa fa-circle closed" ></i>&nbsp;<span>Issue{{comp.status}}</span>
+      <mat-card-footer *ngIf="comp.status==='close'">
+        <i class="fa fa-circle closed"></i>
+        <span>{{comp.status|uppercase}}</span>
       </mat-card-footer>
-      <mat-card-footer *ngIf="comp.status=='null'">
-        <i class="fa fa-circle" ></i><span>&nbsp;Issue {{comp.status}}</span>
+      <mat-card-footer *ngIf="comp.status==='assigned'">
+        <i class="fa fa-circle assigned"></i>
+        <span>{{comp.status|uppercase}}</span>
       </mat-card-footer>
-  </mat-card>
-</div>
+      <mat-card-footer *ngIf="comp.status==='ignored'">
+        <i class="fa fa-circle ignored"></i>
+        <span>{{comp.status|uppercase}}</span>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="comp.status==='progress'">
+        <i class="fa fa-circle progress"></i>
+        <span>{{comp.status|uppercase}}</span>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="comp.status==='invalid'">
+        <i class="fa fa-circle invalid"></i>
+        <span>{{comp.status|uppercase}}</span>
+      </mat-card-footer>
+      <mat-card-footer *ngIf="comp.status==='null'">
+        <i class="fa fa-circle"></i>
+        <span>{{comp.status|uppercase}}</span>
+      </mat-card-footer>
+    </mat-card>
+  </div>
 </div>

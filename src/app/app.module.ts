@@ -21,8 +21,7 @@ import {routingComponents}  from './app-routing/app-routing.module';
     ComplaintsComponent,
     FooterComponent,
     HeaderComponent,
-    routingComponents,
-    
+    routingComponents
   ],
   imports: [
     BrowserModule,
