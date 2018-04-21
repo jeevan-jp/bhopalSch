@@ -1,14 +1,18 @@
 .active { 
 transition: border 1s; 
-border:2px solid;
-    border-color: #42f462;}
+color:#000;
+background-color: wheat;
+/* border:2px solid; */
+    /* border-color: #42f462; */
+    /* border-color:#fdcb6e; */
+}
 .active2{
     color: orange;
 }
 a:hover {
    
     text-decoration: none;
-    color:red;
+    color:#000;
     transition:all 0.5s;
 }
 
@@ -20,7 +24,7 @@ button:focus { outline: none; }
 
 .mat-toolbar.mat-primary {
     box-shadow: 0 0 20px #251b1b;
-    background: rgba(226,226,226,1);
+    /* background: rgba(226,226,226,1);
     background: -moz-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 100%);
     background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(0%, rgba(254,254,254,1)), color-stop(100%, rgba(209,209,209,1)));
     background: -webkit-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 100%);
@@ -28,7 +32,9 @@ button:focus { outline: none; }
     background: -ms-linear-gradient(-45deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 100%);
     background: linear-gradient(135deg, rgba(226,226,226,1) 0%, rgba(254,254,254,1) 0%, rgba(209,209,209,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#d1d1d1', GradientType=1 );
-    color:#2C3A47;
+    color:#2C3A47; */
+    /* background-color:#74b9ff; */
+    background-color:#6c5ce7;
 }
 .mat-toolbar a{
     font-weight: 700;

@@ -2,7 +2,7 @@
 <form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
   <mat-dialog-content>
     <mat-form-field class="full-width" dividerColor="{{formErrors.email?'warn':'primary'}}">
-      <input  matInput [(ngModel)] = "loginForm.email" 
+      <input matInput [(ngModel)] = "loginForm.email" type="text"
         formControlName="email" placeholder="Email-id" required>
       <mat-hint>
         <span [hidden]="!(formErrors.email)">
@@ -11,7 +11,7 @@
       </mat-hint>
     </mat-form-field>
     <mat-form-field class="full-width" dividerColor="{{formErrors.password?'warn':'primary'}}">
-      <input  matInput  [(ngModel)] = "loginForm.password"
+      <input matInput  [(ngModel)] = "loginForm.password" type="password"
        formControlName="password" placeholder="Password" required>
       <mat-hint>
         <span [hidden]="!(formErrors.password)">

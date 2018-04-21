@@ -1,22 +1,24 @@
 <p>
-  Pending complaints 
+  Pending Complaints!
 </p>
 <div class="jumbotron" [@expand]>
-  <div *ngIf="complaints.status===open">
+  <div *ngIf="complaints">
     <mat-card class="card-style" *ngFor="let comp of complaints">
+      <div *ngIf="comp.status==='open'">
       <mat-card-header>
         <mat-card-title>
           <h3>{{comp.title | uppercase}}</h3>
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p>{{comp.body}}
+        <p>{{comp.description}}
         </p>
       </mat-card-content>
       <mat-card-actions>
         <button mat-button>LIKE</button>
         <button mat-button>SHARE</button>
       </mat-card-actions>
+    </div>
     </mat-card>
   </div>
 </div>
