@@ -14,7 +14,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpModule } from '@angular/http';
 import { AuthService } from './auth.service';
+import { AuthService1 } from './auth2.service';
 import {routingComponents}  from './app-routing/app-routing.module';
+import { LogindepComponent } from './logindep/logindep.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import {routingComponents}  from './app-routing/app-routing.module';
     FooterComponent,
     HeaderComponent,
     routingComponents,
+    LogindepComponent,
     
   ],
   imports: [
@@ -34,7 +37,7 @@ import {routingComponents}  from './app-routing/app-routing.module';
     MaterialModule,
     HttpModule,
   ],
-  providers: [WebService, AuthService ],
+  providers: [WebService, AuthService, AuthService1 ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
