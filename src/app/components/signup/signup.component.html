@@ -4,13 +4,14 @@
       <mat-card class="example-card">
         <mat-card-header>
           <div style="text-align: center;">
-            <h1>Department member SignUp</h1>
+            <h3>Department member SignUp</h3>
           </div>
         </mat-card-header>
         <mat-card-content>
           <form novalidate [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <br>
             <p>
-              Select Role:&nbsp;&nbsp;&nbsp;&nbsp;
+              Select Role:
               <mat-radio-group [(ngModel)]="signupForm.role" formControlName="role">
                 <mat-radio-button value="admin" name="role">Admin</mat-radio-button> &nbsp;
                 <mat-radio-button value="emp" name="role">Employee</mat-radio-button>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { flyOutIn } from '../../animations/app.animations';
+import { AuthService1 } from './../../auth2.service';
 declare const $;
 
 @Component({
@@ -17,15 +18,11 @@ export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   deptList: any = [
     'electricity',
-    'water',
     'municipal',
-    'PWD',
     'Police',
-    'Cybercell',
-    'Health'
   ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private auth: AuthService1) {
     this.createForm();
   }
 
@@ -108,9 +105,12 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     $('button.btn-s')[0].disabled = true;
-    console.log(JSON.stringify(this.signupForm.value));
-    this.signupForm.reset();
     // The submission to server code goes here.
+    // console.log(this.signupForm.value);
+    this.auth.register(this.signupForm.value);
+
+    // console.log(JSON.stringify(this.signupForm.value));
+    // this.signupForm.reset();
   }
 
   

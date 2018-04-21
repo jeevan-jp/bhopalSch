@@ -1,0 +1,113 @@
+import { AuthService1 } from '../auth2.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
+import { MatDialog, MatDialogRef, MatSnackBar } from '@angular/material/';
+declare const $;
+
+
+@Component({
+  selector: 'app-logindep',
+  templateUrl: './logindep.component.html',
+  styleUrls: ['./logindep.component.css']
+})
+export class LogindepComponent implements OnInit {
+
+  constructor(private auth: AuthService1, private fb: FormBuilder,
+    public dialogRef: MatDialogRef<LogindepComponent>,
+    private route: Router, public snack: MatSnackBar) {
+      this.createForm();
+    }
+
+  loginForm: FormGroup;
+
+
+  formErrors = {
+    'email': '',
+    'password': '',
+  };
+
+  validationMessages = {
+    'email': {
+      'required': 'Email ID is required.',
+      'email': 'Email not in valid format'
+    },
+    'password': {
+      'required': 'Password is required.'
+    }
+  };
+
+  createForm() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+
+    this.loginForm.valueChanges
+      .subscribe((data) => {
+        this.onValueChanges(data);
+      });
+  }
+
+  onValueChanges(data?: any): void {
+    if (!this.loginForm) { return; }
+
+    const form = this.loginForm;
+    for (const field in this.formErrors) {
+      if (true) {
+        this.formErrors[field] = '';
+        const control = form.get(field);
+        if (control && control.dirty && !control.valid) {
+          // console.log(this.formErrors);
+          const messages = this.validationMessages[field];
+          for (const err in control.errors) {
+            if (true) {   // just doint this for TSLint:)
+              this.formErrors[field] += messages[err] + ' ';
+            }
+          }
+        }
+      }
+    }
+  }
+
+  login() {
+
+     // console.log(this.loginData);
+    //this.auth.login(loginData);
+    $('button.btn-s')[0].disabled = true;
+    this.openSnackBar(this.loginForm.value['email']);
+    // console.log(this.loginForm.value);
+    this.auth.login(this.loginForm.value);
+    this.loginForm.reset();
+    
+
+    this.dialogRef.close();
+  }
+
+  openSnackBar(email): Observable<any> {
+    // console.log('done');
+    this.snack.open('Logged in as!', email, {
+      duration: 4000,
+    });
+    return;
+  }
+
+  closeDialog() {
+    this.route.navigateByUrl('/register');
+    this.dialogRef.close();
+  }
+
+  ngOnInit() {
+    $('.dep').hide();
+    $('#showHidden').on('click', () => {
+      $('.dep').toggle(500);
+    })
+  }
+
+  depSignUp() {
+    this.route.navigateByUrl('/signupDep');
+    this.dialogRef.close();
+  }
+
+}
