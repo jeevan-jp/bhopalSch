@@ -2,13 +2,12 @@ import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
-
-
 @Injectable()
 export class AuthService1 {
     BASE_URL = 'http://localhost:1234/auth2';
     NAME_KEY = 'name';
     TOKEN_KEY = 'token';
+    isLoggedInDep = false;
     constructor(private http: Http, private router: Router) {}
 
     get name() {
@@ -34,6 +33,7 @@ export class AuthService1 {
     logout() {
         localStorage.removeItem(this.NAME_KEY);
         localStorage.removeItem(this.TOKEN_KEY);
+        this.isLoggedInDep = false;
     }
 
     authenticate(res) {
@@ -43,6 +43,7 @@ export class AuthService1 {
         }
         localStorage.setItem(this.TOKEN_KEY, authResponse.token);
         localStorage.setItem(this.NAME_KEY, authResponse.firstName);
+        this.isLoggedInDep = true;
         this.router.navigate(['/']);
     }
 }

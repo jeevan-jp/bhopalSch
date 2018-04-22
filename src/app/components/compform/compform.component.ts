@@ -1,4 +1,5 @@
 import { WebService } from './../../web.service';
+import { AuthService } from './../../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, MaxLengthValidator } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -25,9 +26,10 @@ export class CompformComponent implements OnInit {
     'forest',
     'police'
   ];
+  isLoggedIn = this.auth_ser.isLoggedInGuest;
 
   constructor(private fb: FormBuilder, private webService: WebService, 
-      private route: Router, public snackBar: MatSnackBar) {
+      private route: Router, public snackBar: MatSnackBar, private auth_ser: AuthService) {
     this.createForm();
   }
 
@@ -98,8 +100,14 @@ export class CompformComponent implements OnInit {
   }
 
   onSubmit() {
+    if(this.isLoggedIn===false) {
+      alert('Please Login to continue.');
+      this.compForm.reset();
+      return;
+    }
     $('button.btn-s')[0].disabled = true;
-    this.compForm.value['status'] = 'open';   
+    this.compForm.value['status'] = 'open'; 
+    this.openSnackBar('Complaint submitted', this.compForm.status);  
     // this.compForm.value['latitude'] = this.latitude || '';
     // this.compForm.value['longitude'] = this.longitude;
     this.webService.postMessages(this.compForm.value);

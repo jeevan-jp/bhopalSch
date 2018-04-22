@@ -8,6 +8,7 @@ export class AuthService {
     BASE_URL = 'http://localhost:1234/auth';
     NAME_KEY = 'name';
     TOKEN_KEY = 'token';
+    isLoggedInGuest = false;
     constructor(private http: Http, private router: Router) {}
 
     get name() {
@@ -33,6 +34,7 @@ export class AuthService {
     logout() {
         localStorage.removeItem(this.NAME_KEY);
         localStorage.removeItem(this.TOKEN_KEY);
+        this.isLoggedInGuest = false;
     }
 
     authenticate(res) {
@@ -42,6 +44,7 @@ export class AuthService {
         }
         localStorage.setItem(this.TOKEN_KEY, authResponse.token);
         localStorage.setItem(this.NAME_KEY, authResponse.firstName);
+        this.isLoggedInGuest = true;
         this.router.navigate(['/']);
     }
 }

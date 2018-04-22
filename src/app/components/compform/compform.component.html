@@ -117,8 +117,7 @@
                 <label for="file"><i>Select files to upload</i></label><br>
                 <input type="file" accept="image/png, image/jpeg, .pdf" id="file" name="file" multiple>
               </div>
-              <button mat-raised-button [disabled]="compForm.invalid" 
-                (click)="openSnackBar('Complaint submitted', 'status: open')" class="btn-s">Submit</button>
+              <button mat-raised-button [disabled]="compForm.invalid" class="btn-s">Submit</button>
             </form>
             <div style="margin-top: 10px">
               If not registered? First <a routerLink="/register">SignUp</a>
