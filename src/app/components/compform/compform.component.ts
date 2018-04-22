@@ -21,6 +21,8 @@ export class CompformComponent implements OnInit {
   deptList: any = [
     'electricity',
     'municipal',
+    'education',
+    'forest',
     'police'
   ];
 
