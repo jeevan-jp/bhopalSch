@@ -140,6 +140,10 @@ export class CompformComponent implements OnInit {
           // console.log(data);
         }
       });
+      
+    $('#qrCode').on('click', () => {
+      confirm('Cannot detect camera!');
+    })
 
     $('#location').on('click', () => {
       if (navigator.geolocation) {
