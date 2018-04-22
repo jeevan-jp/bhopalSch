@@ -1,4 +1,4 @@
-import { AuthService } from './../../auth.service';
+import { AuthService1 } from '../auth2.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
@@ -8,14 +8,14 @@ declare const $;
 
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-logindep',
+  templateUrl: './logindep.component.html',
+  styleUrls: ['./logindep.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LogindepComponent implements OnInit {
 
-  constructor(private auth: AuthService, private fb: FormBuilder,
-    public dialogRef: MatDialogRef<LoginComponent>,
+  constructor(private auth: AuthService1, private fb: FormBuilder,
+    public dialogRef: MatDialogRef<LogindepComponent>,
     private route: Router, public snack: MatSnackBar) {
       this.createForm();
     }
@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
 
   login() {
 
-    // console.log(this.loginData);
+     // console.log(this.loginData);
     //this.auth.login(loginData);
     $('button.btn-s')[0].disabled = true;
     this.openSnackBar(this.loginForm.value['email']);

@@ -20,6 +20,7 @@ export const routes:Routes = [
     { path: 'contactus', component: ContactusComponent },
     { path: 'pageNotFound', component: NotfoundComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'adminView', component: AdminviewComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'signupDep', component: SignupComponent },
     { path: 'admin', component: AdminviewComponent },
