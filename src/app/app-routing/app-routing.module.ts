@@ -12,6 +12,8 @@ import { RegisterComponent } from '../components/register/register.component';
 import { SignupComponent } from '../components/signup/signup.component';
 import { AdminviewComponent } from '../adminview/adminview.component';
 import { ComplaintSortedComponent } from '../complaint-sorted/complaint-sorted.component';
+import { LogindepComponent } from '../logindep/logindep.component';
+
 export const routes:Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
@@ -23,9 +25,10 @@ export const routes:Routes = [
     { path: 'adminView', component: AdminviewComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'signupDep', component: SignupComponent },
+    { path: 'loginDep', component: LogindepComponent },
     { path: 'admin', component: AdminviewComponent },
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    {path:'complaintSorted',component:ComplaintSortedComponent},
+    { path:'complaintSorted',component:ComplaintSortedComponent },
     { path: '**', redirectTo: 'pageNotFound', pathMatch: 'full' }
 ];
 

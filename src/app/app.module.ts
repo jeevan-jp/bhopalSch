@@ -23,7 +23,8 @@ import { LogindepComponent } from './logindep/logindep.component';
     ComplaintsComponent,
     FooterComponent,
     HeaderComponent,
-    routingComponents
+    routingComponents,
+    LogindepComponent
   ],
   imports: [
     BrowserModule,
