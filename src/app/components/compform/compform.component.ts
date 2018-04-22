@@ -68,7 +68,8 @@ export class CompformComponent implements OnInit {
       location: [''],
       address: [''],
       level: [''],
-      type_level: ['']
+      type_level: [''],
+      file: ['']
     });
     this.compForm.valueChanges
       .subscribe((data) => {
