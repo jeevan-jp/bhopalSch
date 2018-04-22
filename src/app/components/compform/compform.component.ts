@@ -66,7 +66,9 @@ export class CompformComponent implements OnInit {
       division: [''],
       district: [''],
       location: [''],
-      address: ['']
+      address: [''],
+      level: [''],
+      type_level: ['']
     });
     this.compForm.valueChanges
       .subscribe((data) => {
@@ -117,12 +119,14 @@ export class CompformComponent implements OnInit {
     let longitude;
     $(`#electricity`).hide();
     $(`#municipal`).hide();
+    $('#education').hide();
     // console.log(this.compForm);
     this.compForm.controls['dept'].valueChanges
       .subscribe((data) => {  
       $(`#electricity`).hide();
       $(`#municipal`).hide();
-        if(data === 'electricity' || data === 'municipal') {
+      $('#education').hide();
+        if(data === 'electricity' || data === 'municipal' || data === 'education') {
           $(`#${data}`).show(1000);
           // console.log(data);
         }

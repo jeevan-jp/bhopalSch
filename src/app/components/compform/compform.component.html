@@ -82,7 +82,23 @@
                 </mat-form-field>
               </div> <br>
               <div id="education">
-                
+                <mat-form-field class="full-width">
+                  <mat-select [(value)]="compForm.level" placeholder="Select level of education"
+                    formControlName="level">
+                    <mat-option>None</mat-option>
+                    <mat-option value="primary">Primary</mat-option>
+                    <mat-option value="secondary">Secondary</mat-option>
+                    <mat-option value="higher">Higher</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                  <mat-select [(value)]="compForm.type_level" placeholder="Select type of institution"
+                    formControlName="type_level">
+                    <mat-option>None</mat-option>
+                    <mat-option value="private">Private</mat-option>
+                    <mat-option value="public">Public</mat-option>
+                  </mat-select>
+                </mat-form-field>  
               </div>
               <h5><i>Description:</i></h5>
               <p>
