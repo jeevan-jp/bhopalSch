@@ -28,7 +28,7 @@ export class SignupComponent implements OnInit {
 
   formErrors = {
     'role': '',
-    'firstname': '',
+    'firstName': '',
     'lastname': '',
     'dept': '',
     'email': '',
@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit {
   };
 
   validationMessages = {
-    'firstname': {
+    'firstName': {
       'required': 'First name is required.',
       'minlength': 'First name must be at least 3 characters long.',
       'maxlength': 'First name cannot be more than 20 characters long.'
@@ -69,7 +69,7 @@ export class SignupComponent implements OnInit {
   createForm(): void {
     this.signupForm = this.fb.group({
       role: ['', Validators.required],
-      firstname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+      firstName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       lastname: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       dept: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],

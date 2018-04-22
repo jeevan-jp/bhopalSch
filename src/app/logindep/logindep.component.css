@@ -1,4 +1,6 @@
 .example-card {
     min-width: 150px;
     width: 30%;
+    margin-left: 35%; 
+    margin-bottom: 200px;
 }

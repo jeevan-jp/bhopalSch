@@ -18,12 +18,12 @@
               </mat-radio-group>
             </p>
             <p>
-              <mat-form-field class="full-width" dividerColor="{{ formErrors.firstname?'warn':'primary' }}">
-                <input matInput [(ngModel)]="signupForm.firstname" formControlName="firstname"
+              <mat-form-field class="full-width" dividerColor="{{ formErrors.firstName?'warn':'primary' }}">
+                <input matInput [(ngModel)]="signupForm.firstName" formControlName="firstName"
                   placeholder="First name" type="text" required>
                 <mat-hint>
-                  <span [hidden]="!(formErrors.firstname)">
-                    {{ formErrors.firstname }}
+                  <span [hidden]="!(formErrors.firstName)">
+                    {{ formErrors.firstName }}
                   </span>
                 </mat-hint>
               </mat-form-field>

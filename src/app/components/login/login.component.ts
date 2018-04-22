@@ -98,6 +98,11 @@ export class LoginComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  openLoginDep() {
+    this.route.navigateByUrl('/loginDep');
+    this.dialogRef.close();
+  }
+
   ngOnInit() {
     $('.dep').hide();
     $('#showHidden').on('click', () => {

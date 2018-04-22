@@ -91,7 +91,7 @@ export class LogindepComponent implements OnInit {
   }
 
   closeDialog() {
-    this.route.navigateByUrl('/register');
+    this.route.navigateByUrl('/signupDep');
     //this.dialogRef.close();
   }
 

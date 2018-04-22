@@ -1,8 +1,7 @@
 <mat-card class="example-card">
-<form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
+  <form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
     <mat-form-field class="full-width" dividerColor="{{formErrors.email?'warn':'primary'}}">
-      <input matInput [(ngModel)] = "loginForm.email" type="text"
-        formControlName="email" placeholder="Email-id" required>
+      <input matInput [(ngModel)]="loginForm.email" type="text" formControlName="email" placeholder="Email-id" required>
       <mat-hint>
         <span [hidden]="!(formErrors.email)">
           {{ formErrors.email }}
@@ -10,8 +9,7 @@
       </mat-hint>
     </mat-form-field>
     <mat-form-field class="full-width" dividerColor="{{formErrors.password?'warn':'primary'}}">
-      <input matInput  [(ngModel)] = "loginForm.password" type="password"
-       formControlName="password" placeholder="Password" required>
+      <input matInput [(ngModel)]="loginForm.password" type="password" formControlName="password" placeholder="Password" required>
       <mat-hint>
         <span [hidden]="!(formErrors.password)">
           {{ formErrors.password }}
@@ -21,18 +19,12 @@
     <br>
     <span class="flex-spacer"></span>
     <button mat-button mat-dialog-close>Close</button>
-    <button mat-raised-button class="btn-s" [disabled]="loginForm.invalid"
-      >Login</button>
-</form>
-<br><br>
-<div style="text-align: center;">
-  Not registered:&nbsp;<a routerLink="/home" (click)="closeDialog()">SignUp</a>
-  <br>Department members click <a id="showHidden">here</a>
-</div>
-<div class="dep">
+    <button mat-raised-button class="btn-s" [disabled]="loginForm.invalid">Login</button>
+  </form>
   <br>
-  <h5>For department members only:</h5>
-  <button mat-button (click)="depSignUp()">Signup</button>
-  <button mat-raised-button class="btn-s">Login</button>
-</div>
+  <br>
+  <div style="text-align: center;">
+    Not registered:&nbsp;
+    <a (click)="closeDialog()" style="color: blue">SignUp</a>
+  </div>
 </mat-card>
