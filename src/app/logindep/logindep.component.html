@@ -1,6 +1,5 @@
-<div class="title"><h4 mat-dialog-title>LOGIN</h4></div>
+<mat-card class="example-card">
 <form novalidate [formGroup]="loginForm" (ngSubmit)="login()">
-  <mat-dialog-content>
     <mat-form-field class="full-width" dividerColor="{{formErrors.email?'warn':'primary'}}">
       <input matInput [(ngModel)] = "loginForm.email" type="text"
         formControlName="email" placeholder="Email-id" required>
@@ -20,13 +19,10 @@
       </mat-hint>
     </mat-form-field>
     <br>
-  </mat-dialog-content>
-  <mat-dialog-actions>
     <span class="flex-spacer"></span>
     <button mat-button mat-dialog-close>Close</button>
     <button mat-raised-button class="btn-s" [disabled]="loginForm.invalid"
       >Login</button>
-  </mat-dialog-actions>
 </form>
 <br><br>
 <div style="text-align: center;">
@@ -39,3 +35,4 @@
   <button mat-button (click)="depSignUp()">Signup</button>
   <button mat-raised-button class="btn-s">Login</button>
 </div>
+</mat-card>
