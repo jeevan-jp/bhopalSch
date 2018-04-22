@@ -15,7 +15,6 @@ declare const $;
 export class LogindepComponent implements OnInit {
 
   constructor(private auth: AuthService1, private fb: FormBuilder,
-    public dialogRef: MatDialogRef<LogindepComponent>,
     private route: Router, public snack: MatSnackBar) {
       this.createForm();
     }
@@ -81,8 +80,6 @@ export class LogindepComponent implements OnInit {
     this.auth.login(this.loginForm.value);
     this.loginForm.reset();
     
-
-    this.dialogRef.close();
   }
 
   openSnackBar(email): Observable<any> {
@@ -95,7 +92,7 @@ export class LogindepComponent implements OnInit {
 
   closeDialog() {
     this.route.navigateByUrl('/register');
-    this.dialogRef.close();
+    //this.dialogRef.close();
   }
 
   ngOnInit() {
@@ -107,7 +104,7 @@ export class LogindepComponent implements OnInit {
 
   depSignUp() {
     this.route.navigateByUrl('/signupDep');
-    this.dialogRef.close();
+    //this.dialogRef.close();
   }
 
 }
