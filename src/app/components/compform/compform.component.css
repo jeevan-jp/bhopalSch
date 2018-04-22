@@ -19,3 +19,7 @@ h5 {
 #textarea {
     height: 200px;
 }
+
+#file {
+    margin-bottom: 15px;
+}

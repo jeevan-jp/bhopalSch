@@ -51,11 +51,11 @@ mat-hint > span {
   color:red;
 }
 .invalid{
-  color: yellow;
+  color: purple;
 }
 .progress{
  color:indigo;
 }
 .assigned{
-  color:snow;
+  color:yellow;
 }
